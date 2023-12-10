@@ -1,0 +1,80 @@
+*{
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.main{
+    margin: 1rem;
+    padding: 1rem;
+    /* border: 1px solid white; */
+    border: 2px solid gray;
+    border-radius: 1rem;
+    background: rgb(37, 36, 36);
+}
+
+.main::before{
+    content: '';
+    background-image: url('');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 140vw;
+    height: 100vh;
+    display: inline-block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.main::after{
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100vw;
+    height: 140vh;
+    display: inline-block;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    transform: rotate(180deg);
+}
+
+body{
+
+    /* background: #1A1AED;
+    background: linear-gradient(to top right, #1A1AED 12%, #AD2A93 85%); */
+    /* background: #3BA6ED;
+    background: linear-gradient(to top left, #3BA6ED 12%, #3128AD 85%); */
+
+    /* background: rgb(79,4,191);
+    background: linear-gradient(90deg, rgba(79,4,191,1) 0%, rgba(7,72,210,1) 4%, rgba(48,123,207,0.9472163865546218) 83%, rgba(8,71,240,0.958420868347339) 100%, rgba(0,212,255,1) 100%, rgba(216,210,41,1) 100%, rgba(244,234,19,0.4962359943977591) 100%); */
+
+    /* background: rgb(126,5,229);
+    background: linear-gradient(90deg, rgba(126,5,229,0.908000700280112) 5%, rgba(118,10,228,0.9192051820728291) 34%, rgba(7,89,210,0.9640231092436975) 78%, rgba(48,123,207,0.9472163865546218) 92%, rgba(0,146,255,0.7539390756302521) 100%, rgba(8,71,240,0.958420868347339) 100%); */
+
+    background: rgb(126,5,229);
+    background: linear-gradient(90deg, rgba(126,5,229,0.908000700280112) 5%, rgba(118,10,228,0.9192051820728291) 22%, rgba(7,89,210,0.9640231092436975) 89%, rgba(68,47,183,0.9472163865546218) 100%, rgba(8,71,240,0.958420868347339) 100%);
+    color: #fff;
+}
+
+a{
+    color: #fff;
+    text-decoration: none;
+}
+
+a:hover{
+    color: #fff;
+    text-decoration: underline;
+}
+
+@media only screen and (min-width:768px){
+    .main{
+        max-width: 1024px;
+        margin: 1rem auto;
+    }
+
+    .main::before, .main::after{
+        width: 70vw;
+    }
+    
+}
