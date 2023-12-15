@@ -1,0 +1,487 @@
+inputRequisicao
+
+input, select{
+    border-color: #CDCDCD;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 2px;
+    height: 25px;
+}
+
+
+
+:checked{
+    transition-duration: 1000ms;  
+    width: 20px;
+    height: 20px;
+}
+
+.grupoInput span{
+    font-size: 16px;
+}
+#idDepartamento{
+    width: 60px;
+}
+#departamento{
+    width: 450px;
+}
+#dataRequisicao{
+    width: 120px;
+}
+#idFuncionario{
+    width: 60px;
+}
+#NomeFuncionario{
+    width: 450px;
+}
+#cargo{
+    width: 120px;
+}
+#categoriaMotivo{
+    width: 130px;
+}
+#Motivo{
+    width: 200px;
+}
+.grupo9{
+    width: 250px;
+}
+
+.camposItens span{
+    font-size: 16px;
+}
+.grupoProduto{
+    width: 90px;
+    margin-right: 5px;
+
+}
+.grupoProduto input{
+    width: 90px;
+}
+
+.grupoProdutoDescricao{
+    width: 300px;
+    margin-right: 5px;
+}
+.grupoProdutoDescricao input{
+    width: 300px;
+}
+.grupoEstoque{
+    width: 60px;
+    margin-right: 5px; 
+}
+.grupoEstoque input{
+    width: 60px;
+}
+.grupoQuantidade{
+    width: 80px;
+}
+.grupoQuantidade input{
+    width: 80px;
+}
+
+
+.BtnInserirItens{
+    background-color:#0095C5 ;
+    width: 100px;
+    height: 30px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    cursor: pointer;
+
+}
+.BtnInserirItens span{
+    color: #ffffff;
+    font-size: 14px;
+}
+
+#total{
+    width: 120px;
+    background-color: #CDCDCD;
+    margin-left: 5px;
+}
+input{
+    outline-color: #0095C5;
+}
+#total:focus{
+    outline-color: #CDCDCD;
+}
+
+/* input[type='radio']{
+    appearance: none;
+    width: 20px;
+    height: 20px;     
+    border: 1px solid;    
+     
+    
+} */
+
+.chkPrioridade{
+    appearance: none;
+    width: 20px;
+    height: 20px;     
+    border: 1px solid #000000;  
+    border-radius: 50%;
+    
+}
+
+.chkPrioridadeDesabilitado{
+    appearance: none;
+    width: 20px;
+    height: 20px;     
+    border: 1px solid #ffffff;  
+    border-radius: 50%;
+}
+.grupoPrioridade{
+    display: flex;
+    padding-left: 2px;
+    
+}
+
+#urgente:checked{
+    border: 1px solid red;      
+    background-color: red;
+    transform: scale(1.2);
+}
+#medio:checked{
+    border: 1px solid yellow;      
+    background-color: yellow;
+    transform: scale(1.2);    
+}
+#baixo:checked{
+    border: 1px solid green;      
+    background-color: green;
+    transform: scale(1.2);
+}
+
+
+
+
+.BtnGravar{
+    background-color:#0a0b0b ;
+    width: 120px;
+    height: 30px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    cursor: pointer;
+
+}
+
+.BtnGravar span{
+    color: #ffffff;
+    font-size: 14px;
+}
+
+
+----------------------------------------------------------------------
+
+*{
+    
+    margin:0;
+    padding: 0;
+}
+
+/* body{
+    width: 100vw;
+} */
+.main{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;    
+    align-items: center;   
+    justify-content: center;  
+
+}
+.header{
+    width: 50vw;
+    height: 5vh;
+    background-color: #15C7FF;   
+    display: flex;
+    align-items: center;
+    padding-left: 1vw;
+    padding-right: 1vw;
+  
+}
+.header span{
+    color: #ffffff;
+}
+.conteudo{
+    /* background-color: yellow; */
+    padding-top: 3vh;
+    width: 50vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    border-color:  #CDCDCD;;
+    border-radius: 20px;
+    border-style: solid;
+    flex-wrap: wrap;
+  
+}
+.camposPrincipais{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3vh;
+    flex-wrap: wrap;
+}
+.linhasCampos{
+    display: flex;    
+    flex-direction: row;
+    margin-top: 1vh;
+    justify-content: start;
+    align-items: start;
+    flex-wrap: wrap;    
+}
+.grupoInput{
+    display: flex;
+    flex-direction: column;
+    padding-left: 5px;
+    
+}
+
+.grupo9{
+    margin-left: 1px;
+    display: flex;
+    justify-content: center;
+    color: #ffffff;
+
+}
+
+
+.radioPrioridade{  
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 3px;
+    padding-left: 1px;
+    padding-right: 5px;
+    border-color: #CDCDCD;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    color: #000000;
+}
+
+
+.radioPrioridadeDesabilitado{  
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 3px;
+    padding-left: 1px;
+    padding-right: 5px;
+    border-color: #CDCDCD;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    background-color: red;
+    color:#ffffff;
+}
+
+
+
+
+.grupoCategoria{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnAdd{    
+    width: 30px;
+    height: 30px;
+   
+}
+.btnAdd:hover{
+    cursor: pointer; 
+    scale: 1.5;    
+    transition-duration: 1000ms;    
+
+}
+
+.grupoMotivo{
+    display: flex;
+    justify-content: center;
+    align-items: center;        
+
+}
+
+/* ITENS */
+.camposItens{
+    display: flex;
+    flex-direction: column;
+    border-color: #CDCDCD;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;    
+    width: 100%;
+    
+}
+.linhaAdicionarItens{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: end;        
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    flex-wrap: wrap;
+}
+.grupoStatusEstoque{
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    margin-left: 5px;           
+}
+.grupoStatusEstoque img{
+    display: flex;
+    width: 30px;
+    height: 30px;
+}
+.grupoBtnInserirItens{
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    margin-left: 5px; 
+}
+
+
+.linhaTotal{
+ margin-top: 10px;
+ margin-bottom: 20px;
+ display: flex;
+ justify-content: end;
+ align-items: center;
+}
+.linhaTotal span{
+    font-size: 18px;
+}
+
+
+.grupoBtnGravar{
+    display: flex;
+    justify-content: end;
+    align-items: center;  
+    margin-left: 5px;
+    margin-top: 10px; 
+    margin-bottom: 10px;
+}
+-------------------------------------------------------------------------------------------
+
+dados.js
+
+const categorias = [
+    {
+        "idCategoria": 1,
+        "Descricao": "Gestão",
+    },
+    {
+        "idCategoria": 2,
+        "Descricao": "Cliente",
+    },
+    {
+        "idCategoria": 3,
+        "Descricao": "RP",
+    },
+]
+const motivos=[
+    {
+        "idMotivo": 1,
+        "Descricao": "Planejamento",
+        "idCategoria": 1
+    },
+    {
+        "idMotivo": 2,
+        "Descricao": "Financeiro",
+        "idCategoria": 1
+    },
+    {
+        "idMotivo": 3,
+        "Descricao": "Quebra de Máquina",
+        "idCategoria": 2
+    }
+]
+
+
+const produtos=[
+    {
+        "idProduto": 10,
+        "Descricao": "Papel A4",
+        "Estoque": 10,
+        "EstoqueMinimo": 5,
+        "Unidade": "Un",
+        "Preco": 10.00
+    },
+    {
+        "idProduto": 20,
+        "Descricao": "Mel doce",
+        "Estoque": 5,
+        "EstoqueMinimo": 5,
+        "Unidade": "Un",
+        "Preco": 10.00
+    },
+]
+
+const departamentos=[
+    {
+        "Id": 10,
+        "Descricao": "Sec. Educação"
+    },
+    {
+        "Id": 20,
+        "Descricao": "Ação Social"
+    },
+]
+
+const funcionarios=[
+    {
+        "Id": 10,
+        "Nome": "Reginaldo Santana",
+        "Cargo": "CIO",
+    },
+    {
+        "Id": 20,
+        "Nome": "Maria do Carmo",
+        "Cargo": "CFO"
+    },
+    {
+        "Id": 30,
+        "Nome": "Pedro Souza",
+        "Cargo": "Menino do Computador"
+    },
+]
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+css para tabela
+
+
+.tabelaItens{
+    border: 1px solid #CDCDCD;
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight:unset;
+    table-layout: fixed;
+}
+.tabelaItens th{
+    background-color:#15C7FF; 
+    border: 1px solid #CDCDCD;
+    border-collapse: collapse; 
+    color: white; 
+   
+    text-align: left;
+    padding-left: 10px;
+}
+.tabelaItens tr, .tabelaItens td{
+    border: 1px solid #CDCDCD;
+    border-collapse: collapse;
+    padding-left: 10px;
+}
