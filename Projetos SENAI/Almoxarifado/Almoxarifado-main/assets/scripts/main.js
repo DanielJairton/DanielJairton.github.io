@@ -1,34 +1,7 @@
 
-// document.getElementById('departamento').addEventListener('focus', function(){
-//     const inputDepartamento = document.getElementById('departamento');
-//     inputDepartamento.style.backgroundColor= "lightgreen"
-
-// });
-
-// document.getElementById('departamento').addEventListener('blur', function(){
-//     const inputDepartamento = document.getElementById('departamento');
-//     inputDepartamento.style.backgroundColor= "white"
-
-// });
-
+//Muda a cor de fundo dos input com mudarCor="true"
 function adicionarCorAoFocarInput(){
-    // const listInput = document.querySelectorAll("input[type=text]");
-    //const listInput = document.querySelectorAll("input");
     const listInput = document.querySelectorAll("[mudarCor='true']");
-
-    // 
-    
-
-    //listInput[2].style.backgroundColor =  'lightgreen';
-
-    // for (let i = 0; i < listInput.length; i++){
-        
-    //     listInput[i].style.backgroundColor='lightgreen'; 
-    //     console.log("texto");
-    // }
-    // listInput.forEach(function(item){
-    //     item.style.backgroundColor = "lightgreen"
-    // })
     listInput.forEach(function(item){
         item.addEventListener('focus', function(){
             item.style.backgroundColor = "lightgreen";
@@ -39,6 +12,7 @@ function adicionarCorAoFocarInput(){
     })
 }
 
+//Carrega as categorias
 function carregarCategorias(){
     const selectCategoria = document.getElementById('categoriaMotivo');
     selectCategoria.innerHTML = "";
@@ -57,6 +31,7 @@ function carregarCategorias(){
 
 }
 
+//Carrega os motivos
 function carregarMotivos(){
     const selectMotivo = document.getElementById('Motivo');
     selectMotivo.innerHTML = "";
@@ -77,11 +52,11 @@ function carregarMotivos(){
         selectMotivo.add(opt);
     })
 }
-
 document.getElementById('categoriaMotivo').addEventListener('change', function(){
     carregarMotivos();
 })
 
+//Checa o id e se existir um id igual carregar os dados do produto
 document.getElementById('CodigoProduto').addEventListener('keyup', function(){
     const codigoPesquisado = document.getElementById('CodigoProduto').value;
     let produtosFiltrados = produtos.filter((p)=>p.idProduto == codigoPesquisado);
@@ -89,12 +64,37 @@ document.getElementById('CodigoProduto').addEventListener('keyup', function(){
     if (produtosFiltrados.length>0) {
         document.getElementById('DescricaoProduto').value = produtosFiltrados[0].Descricao;
         document.getElementById('Estoque').value = produtosFiltrados[0].Estoque;
+
+        //Mostra o status do estoque com cores
+        if (document.getElementById('Estoque').value > produtosFiltrados[0].EstoqueMinimo*1.1) {
+            document.getElementById('verde').style.display = 'inline';
+            document.getElementById('amarelo').style.display = 'none';
+            document.getElementById('vermelho').style.display = 'none';
+            console.log("verde");
+        }
+        else if(document.getElementById('Estoque').value >= produtosFiltrados[0].EstoqueMinimo*0.9){
+            document.getElementById('verde').style.display = 'none';
+            document.getElementById('amarelo').style.display = 'inline';
+            document.getElementById('vermelho').style.display = 'none';
+            console.log("amarelo");
+        }
+        else{
+            document.getElementById('verde').style.display = 'none';
+            document.getElementById('amarelo').style.display = 'none';
+            document.getElementById('vermelho').style.display = 'inline';
+            console.log("vermelho");
+        }
     }
     else{
+        document.getElementById('verde').style.display = 'none';
+        document.getElementById('amarelo').style.display = 'none';
+        document.getElementById('vermelho').style.display = 'none';
         document.getElementById('DescricaoProduto').value = ""
+        document.getElementById('Estoque').value = ""
     }
 })
 
+//Checa o id e se existir um id igual carregar os dados
 document.getElementById('idDepartamento').addEventListener('keyup', function(){
     const codigoPesquisado = document.getElementById('idDepartamento').value;
     let departamentosFiltrados = departamentos.filter((p)=>p.idDep == codigoPesquisado);
@@ -107,6 +107,7 @@ document.getElementById('idDepartamento').addEventListener('keyup', function(){
     }
 })
 
+//Checa o id e se existir um id igual carregar os dados
 document.getElementById('idFuncionario').addEventListener('keyup', function(){
     const codigoPesquisado = document.getElementById('idFuncionario').value;
     let funcionariosFiltrados = funcionarios.filter((p)=>p.idFuncionario == codigoPesquisado);
@@ -121,6 +122,7 @@ document.getElementById('idFuncionario').addEventListener('keyup', function(){
     }
 })
 
+//Checa se os campos estão preenchidos de forma válida
 document.getElementById('btnGravar').addEventListener('click', function(){
     const elementosObrigatorios = document.querySelectorAll('[data-obrigatorio="true"]');
     console.log(elementosObrigatorios);
@@ -135,7 +137,6 @@ document.getElementById('btnGravar').addEventListener('click', function(){
     const chkMedioValue = document.getElementById('medio').checked;
     const chkBaixoValue = document.getElementById('baixo').checked;
     if (chkUrgenteValue==false && chkMedioValue==false && chkBaixoValue==false){
-        //console.log("Teste")
         const divPrioridade = document.getElementById("radioPrioridade");        
         divPrioridade.classList.remove('radioPrioridade');
         divPrioridade.classList.add('radioPrioridadeDesabilitado');        
@@ -170,18 +171,42 @@ document.getElementById('baixo').addEventListener('click', function(){
     divPrioridade2.classList.add('radioPrioridade');
 })
 
-//Código da aula que faltei
-function addCamposNumeros(){
-    const somenteNumeros = document.querySelectorAll
+//Constante do valor total de requisição, zerado para evitar erro
+const totalRequisicao = document.getElementById('total')
+totalRequisicao.value = 0
+
+
+function criarBtnRemover(tabela, objLinha, numeroLinha){
+    const btnRemoverItem = document.createElement('div');
+        btnRemoverItem.className = "BtnRemover";
+        btnRemoverItem.id = 'btnRemover' + numeroLinha;
+        btnRemoverItem.innerHTML = '<span>Remover</span>';
+    
+    btnRemoverItem.addEventListener('click', function(){
+        if (objLinha && tabelaItens.contains(objLinha)){
+            tabelaItens.removeChild(objLinha);
+        }
+
+        const colunas = objLinha.getElementsByTagName('td');
+        let valorLinha = colunas[5].innerText;
+
+        totalRequisicao.value = parseFloat(totalRequisicao.value - parseFloat(valorLinha));
+
+
+
+    });
+
+    return btnRemoverItem;
 }
 
+
+var qtdLinhasAtualNaTabela = 0;
 document.getElementById('btnInserirItens').addEventListener('click', function(){
     const tabelaItens = document.getElementById('tabelaItens')
 
     const campoProduto = document.getElementById('CodigoProduto')
     const campoDescricaoProduto = document.getElementById('DescricaoProduto')
-    const campoQuantidade = document.getElementById('Estoque')
-    const totalRequisicao = document.getElementById('total')
+    const campoQuantidade = document.getElementById('Quantidade')
     
     const linha = document.createElement('tr')
 
@@ -191,7 +216,7 @@ document.getElementById('btnInserirItens').addEventListener('click', function(){
     const tdUnidade = document.createElement('td')
     const tdPreco = document.createElement('td')
     const tdTotalLinha = document.createElement('td')
-    //const tdBtnRemover = document.createElement('tr')
+    const tdBtnRemover = document.createElement('tr')
 
     const produtoPesquisado = produtos.filter((p)=>p.idProduto==campoProduto.value)
 
@@ -210,6 +235,14 @@ document.getElementById('btnInserirItens').addEventListener('click', function(){
     linha.appendChild(tdTotalLinha)
     tabelaItens.appendChild(linha)
 
+    //Código Novo
+    totalRequisicao.value = parseFloat(totalRequisicao.value) + parseFloat(campoQuantidade.value*produtoPesquisado[0].Preco);
+
+    //BtnRemover
+    tdBtnRemover.appendChild(criarBtnRemover(tabelaItens, linha, qtdLinhasAtualNaTabela));
+        linha.appendChild(tdBtnRemover);
+        tabelaItens.appendChild(linha);
+        qtdLinhasAtualNaTabela = qtdLinhasAtualNaTabela + 1;
 })
 
 
@@ -231,10 +264,5 @@ function eventoClickPrioridadeHabilitarCor(){
     });
 }
 
-
-
 adicionarCorAoFocarInput();
 carregarCategorias();
-
-//console.log(categorias)
-//console.log(motivos)

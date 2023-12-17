@@ -1,0 +1,8 @@
+Nome e sobrenome: mínimo de dois caracteres
+Email: if(emailregex.test(campos[1].value)){
+        removerErro(1)
+    }
+    else{
+        verErro(1)
+    }
+Senioridade: escolher uma opção que não seja selecione

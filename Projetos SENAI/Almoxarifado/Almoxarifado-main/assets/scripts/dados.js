@@ -31,27 +31,6 @@ const motivos = [
     }
 ]
 
-/*const produtos = [
-    {
-        "idProduto" : 1,
-        "descricao" : "Cadeira",
-        "estoque" : 10,
-        "estoqueMinimo" : 5
-    },
-    {
-        "idProduto" : 2,
-        "descricao" : "Banco",
-        "estoque" : 20,
-        "estoqueMinimo" : 10
-    },
-    {
-        "idProduto" : 3,
-        "descricao" : "Vaso",
-        "estoque" : 30,
-        "estoqueMinimo" : 35
-    },
-]*/
-
 const produtos=[
     {
         "idProduto": 1,
@@ -72,8 +51,8 @@ const produtos=[
     {
         "idProduto": 3,
         "Descricao": "Cadeira",
-        "Estoque": 6,
-        "EstoqueMinimo": 3,
+        "Estoque": 3,
+        "EstoqueMinimo": 6,
         "Unidade": "Un",
         "Preco": 40.00
     },

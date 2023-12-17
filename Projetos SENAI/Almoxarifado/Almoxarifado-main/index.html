@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -112,44 +112,43 @@
                                 <span>Estoque</span>
                                 <input type="text" id="Estoque">
                             </div>
-                            <div class="grupoQuantidade">
-                                <span>Quantidade</span>
-                                <input type="text" id="Quantidade">
-                            </div>
-                        
                         
                             <div class="grupoStatusEstoque"> 
-                                <div>
-                                    <img src="assets/img/verde.svg" alt="">
+                                <div class="imgStatusEstoque">
+                                    <img src="assets/img/verde.svg" id="verde" alt="verde">
+                                    <img src="assets/img/amarelo.svg" id="amarelo" alt="amarelo">
+                                    <img src="assets/img/vermelho.svg" id="vermelho" alt="vermelho">
+
+                                    <div class="tooltiptext" >
+                                        <div>
+                                            <img src="assets/img/verde.svg" id="verde-tp" alt="verde">
+                                            <label for="verde-tp">Estoque acima de 10% do mínimo</label>
+                                        </div>
+                                        <div>
+                                            <img src="assets/img/amarelo.svg" id="amarelo-tp" alt="amarelo">
+                                            <label for="amarelo-tp">Estoque entre 90% e 109% do mínimo</label>
+                                        </div>
+                                        <div>
+                                            <img src="assets/img/vermelho.svg" id="vermelho-tp" alt="vermelho">
+                                            <label for="vermelho-tp">Estoque menor que 90% do mínimo</label>
+                                        </div>
+                                        
+                                    </div>
                                 </div>                           
                           
                             </div>
+
+                            <div class="grupoQuantidade">
+                                <span>Quantidade</span>
+                                <input type="number" id="Quantidade">
+                            </div>
+                            
                             <div class="grupoBtnInserirItens">
                                 <div class="BtnInserirItens" id="btnInserirItens">  
                                     <span>Adicionar</span>
                                 </div>
                             </div>
                     </div>
-                    <!-- <div class="tabela">
-                        <table class="tabelaItens">
-                            <tr>
-                                <th>Código</th>
-                                <th>Produto</th>
-                                <th>Qtd</th>
-                                <th>Un.</th>
-                                <th>Preço</th>
-                                <th>Total</th>
-                            </tr>
-                            <tr>
-                                <td>01</td>
-                                <td>Papel A4</td>
-                                <td>10</td>
-                                <td>Pç</td>
-                                <td>18,00</td>
-                                <td>180,00</td>
-                            </tr>
-                        </table>
-                    </div> -->
                     <div class="tabela">
                         <table class="tabelaItens" id="tabelaItens">
                             <tr>
@@ -162,27 +161,10 @@
                             </tr>
                         </table>
                     </div>
-                    <!-- <div class="tabelaItens">
-                        <table class="itensAdicionados">
-                            <tr>
-                                <th>ID Produto</th>
-                                <th>Descrição</th>
-                                <th>Quantidade</th>
-                                <th>Unidade</th>
-                                <th>Preço</th>
-                                <th>Preço Total</th>
-                            </tr>
-                        </table>
-                    </div> -->
-
                     <div class="linhaTotal">
                         <span>Preço Total</span>
                         <input type="text" readonly id="total">
                     </div>
-                </div>
-                <div class="linhaTotal">
-                    <span>Total</span>
-                    <input type="text" readonly id="total">
                 </div>
                 <div class="grupoBtnGravar">
                     <div class="btnGravar" id="btnGravar">

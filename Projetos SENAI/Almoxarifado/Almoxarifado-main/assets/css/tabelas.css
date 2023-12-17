@@ -20,3 +20,15 @@
     border-collapse: collapse;
     padding-left: 10px;
 }
+
+.BtnRemover{
+    background-color:red ;
+    color:  white;
+    width: 91px;
+    height: 30px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}

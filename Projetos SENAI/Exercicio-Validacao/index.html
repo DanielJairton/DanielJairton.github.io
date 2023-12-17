@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Devs</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  
+  <!-- <head>
+    <title>Cadastro</title>
+ 
+	</head> -->
+<body>
+  <div>
+    <h1 id="titulo">Cadastro de DEVs</h1>
+    <p id="subtitulo">Complete suas informações</p>
+  </div>
+  <form id="formulario">
+    <fieldset class="grupo">
+      <div class="campo">
+      	<label for="nome"><strong>Nome</strong></label>
+      	<input type="text" class="input-texto" name="nome" id="nome"  oninput="validarNome()"></input>
+				<span class="span-invalido">Preencha o campo</span>
+        <!-- <span class="span-valido"></span> -->
+      </div>
+      <div class="campo">
+        <label for="sobrenome"><strong>Sobrenome</strong></label>
+      	<input type="text" class="input-texto" name="sobrenome" id="sobrenome"  oninput="validarSobrenome()">
+				<span class="span-invalido">Preencha o campo</span>
+      </div>
+    </fieldset>
+  <br>
+  <div class="campo">
+      <label for="email"><strong>Email</strong></label>
+      <input type="email" class="input-texto" name="email" id="email"  oninput="validarEmail()">
+			<span class="span-invalido">Email inválido</span>
+  </div>
+  <br>
+  <div class="campo">
+    <label id="label-radio" style="color: red; display: none;">Selecione uma opção</label>
+    <label><strong>De qual lado da aplicação você desenvolve?</strong></label>
+    <label>
+    <input type="radio" name="devweb" value="frontend" id="frontend"  onclick="validarRadio()">Front-end
+    </input>
+    </label>
+  	<label>
+  	<input type="radio" name="devweb" value="backend" id="backend"  onclick="validarRadio()">Back-end
+    </input>
+  	</label>
+  	<label>
+  	<input type="radio" name="devweb" value="fullstack" id="fullstack"  onclick="validarRadio()">Fullstack
+    </input>
+		</label>
+    </div>
+<br>
+<div class="campo">
+  <label for="senioridade" id="label-senioridade" style="color: red; display: none;">Selecione uma opção</label>
+  <label for="senioridade"><strong> Senioridade </strong></label>
+  <select id="senioridade" oninput="validarSenioridade()">
+    <option selected disable value="">Selecione</option>
+    <option>Junior</option>
+        <option>Pleno</option>
+        <option>Senior</option> 
+  </select>
+ 
+</div>
+<fieldset class="grupo">
+  <div class="campo" id="div-checkbox">
+    <label><strong>Selecione as tecnologias que utiliza:</strong></label><br><br>
+    <label id="label-checkbox">Marque no mínimo duas opções</label>
+    <input type="checkbox" id="tecnologia1" value="HTML" onchange="validarCheckbox()">
+    <label type="tecnologia1">HTML</label>
+     <input type="checkbox" id="tecnologia2" value="CSS" onchange="validarCheckbox()">
+    <label type="tecnologia2">CSS</label>
+     <input type="checkbox" id="tecnologia3" value="javascript" onchange="validarCheckbox()">
+    <label type="tecnologia3">Javascript</label>
+     <input type="checkbox" id="tecnologia4" value="PHP" onchange="validarCheckbox()">
+    <label type="tecnologia4">PHP</label>
+     <input type="checkbox" id="tecnologia5" value="C#" onchange="validarCheckbox()">
+    <label type="tecnologia5">C#</label>
+     <input type="checkbox" id="tecnologia6" value="python" onchange="validarCheckbox()">
+    <label type="tecnologia6">Python</label>
+     <input type="checkbox" id="tecnologia7" value="java" onchange="validarCheckbox()">
+    <label type="tecnologia7">Java</label>
+  </div>
+  </fieldset>
+	<div class="campo">
+  	<br>
+  	<label><strong>Conte um pouco da sua experiência:</strong></label>
+  	<textarea class="input-texto" row="6" style="width: 26em" id="experiencia" nome="experiencia"  oninput="validarExperiencia()"></textarea>
+		<span class="span-invalido">Preencha o campo</span>
+	</div>
+	<button class="botao" type="submit">Concluir</button>
+  </form>
+	<script src="assets/script/script.js"></script>
+</body>
+</html>
