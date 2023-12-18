@@ -1,0 +1,35 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-color: rgb(252, 244, 235);
+    width: 1440px;
+}
+
+#box-maior{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.box-medio{
+    width: 350px;
+    height: 500px;
+}
+
+#box-texto{
+    background-color: white;
+}
+
+#box-img{
+    border-start-start-radius: 5px;
+}
+
+#img-produto{
+    height: 100%;
+    width: 100%;
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
