@@ -1,0 +1,5 @@
+Valores para cálculo
+    -Vt: valor total, Vs: valor sucata, Vu: vida útil
+
+Formúla
+    - D.P = ((Vt-Vs)/Vu)*Tu

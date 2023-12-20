@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/global.css">
+    <title>Calculadora de Depreciação</title>
+</head>
+<body>
+    <div class="box-maior">
+        <h1 id="titulo">Calculadora de Depreciação</h1>
+        <div class="box-menor">
+            <label for="input-valorTotal">Valor Total</label><br>
+            <input type="number" id="input-valorTotal" dadoRequerido="true">
+        </div>
+        <div class="box-menor">
+            <label for="input-valorSucata">Valor Sucata</label><br>
+            <input type="number" id="input-valorSucata" dadoRequerido="true">
+        </div>
+        <div class="box-menor">
+            <label for="input-vidaUtil">Vida Útil</label><br>
+            <input type="number" id="input-vidaUtil" dadoRequerido="true">
+        </div>
+        <div class="box-menor">
+            <label for="input-tempoUso">Tempo de Uso</label><br>
+            <input type="number" id="input-tempoUso" dadoRequerido="true">
+        </div>
+        <label for="btn-calcular" id="label-aviso">Preencha todos os campos com valores positivos</label>
+        <button type="submit" id="btn-calcular">Calcular</button>
+    </div>
+    <div class="box-maior" id="box-resultado">
+        <div class="box-menor">
+            <label for="input-depreciacao">Depreciação</label><br>
+            <input type="number" id="input-depreciacao" readonly>
+        </div>
+    </div>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

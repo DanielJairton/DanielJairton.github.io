@@ -1,0 +1,68 @@
+*{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: cadetblue;
+    display: block;
+    align-content: center;
+}
+
+.box-maior{
+    background-color: white;
+    padding: 15px;
+    margin: auto;
+    margin-top: 40px;
+    border-radius: 5px;
+    width: 500px;
+    border: 2px solid black;
+}
+
+#titulo{
+    margin-left: 5%;
+}
+
+#box-resultado{
+    margin-top: 15px;
+}
+
+.box-menor{
+    padding: 5px;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    /* border: 2px solid black; */
+}
+
+.box-menor label{
+    margin-left: 20%;
+    margin-right: 20%;
+    font-size: large;
+}
+
+.box-menor input{
+    margin-left: 20%;
+    margin-right: 20%;
+    height: 25px;
+    width: 55%;
+    border: .5px solid black;
+}
+
+#label-aviso{
+    visibility: hidden;
+    margin-left: 13%;
+    color: red;
+    font-weight: 800;
+}
+
+#btn-calcular{
+    height: 30px;
+    width: 80px;
+    margin-inline: 43%;
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(14, 178, 233);
+    border-style: none;
+}

@@ -12,6 +12,7 @@ function adicionarCorAoFocarInput(){
     })
 }
 
+
 //Carrega as categorias
 function carregarCategorias(){
     const selectCategoria = document.getElementById('categoriaMotivo');
