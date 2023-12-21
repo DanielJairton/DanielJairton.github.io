@@ -10,7 +10,7 @@ body{
     align-content: center;
 }
 
-.box-maior{
+/* .box-maior{
     background-color: white;
     padding: 15px;
     margin: auto;
@@ -18,10 +18,20 @@ body{
     border-radius: 5px;
     width: 500px;
     border: 2px solid black;
+} */
+.box-maior{
+    background-color: white;
+    padding: 15px;
+    margin: auto;
+    margin-top: 40px;
+    border-radius: 5px;
+    /* width: 500px; */
+    width: 433px;
+    border: 2px solid black;
 }
 
 #titulo{
-    margin-left: 5%;
+    margin-left: 2%;
 }
 
 #box-resultado{
@@ -60,7 +70,8 @@ body{
 #btn-calcular{
     height: 30px;
     width: 80px;
-    margin-inline: 43%;
+    /* margin-inline: 43%; */
+    margin-left: 40%;
     border-radius: 5px;
     color: white;
     background-color: rgb(14, 178, 233);

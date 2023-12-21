@@ -1,0 +1,45 @@
+{
+    "abertura": "19/06/2000",
+    "situacao": "ATIVA",
+    "tipo": "FILIAL",
+    "nome": "SERVICO NACIONAL DE APRENDIZAGEM INDUSTRIAL SENAI",
+    "fantasia": "SENAI",
+    "porte": "DEMAIS",
+    "natureza_juridica": "307-7 - Serviço Social Autônomo",
+    "atividade_principal": [
+        {
+            "code": "85.99-6-99",
+            "text": "Outras atividades de ensino não especificadas anteriormente"
+        }
+    ],
+    "logradouro": "RUA SARQUIS JOSE SARQUIS",
+    "numero": "156",
+    "municipio": "RESENDE",
+    "bairro": "JARDIM JALISCO",
+    "uf": "RJ",
+    "cep": "27.510-100",
+    "data_situacao": "30/03/2002",
+    "cnpj": "03.848.688/0015-58",
+    "ultima_atualizacao": "2023-12-09T23:59:59.000Z",
+    "status": "OK",
+    "complemento": "",
+    "email": "",
+    "telefone": "",
+    "efr": "",
+    "motivo_situacao": "",
+    "situacao_especial": "",
+    "data_situacao_especial": "",
+    "atividades_secundarias": [
+        {
+            "code": "00.00-0-00",
+            "text": "Não informada"
+        }
+    ],
+    "capital_social": "0.00",
+    "qsa": [],
+    "extra": {},
+    "billing": {
+        "free": true,
+        "database": true
+    }
+}

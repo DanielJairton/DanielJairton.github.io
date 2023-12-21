@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon_io/">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
     <link rel="stylesheet" href="assets/css/global.css">
     <title>Calculadora de Depreciação</title>
 </head>
@@ -18,11 +22,11 @@
             <input type="number" id="input-valorSucata" dadoRequerido="true">
         </div>
         <div class="box-menor">
-            <label for="input-vidaUtil">Vida Útil</label><br>
+            <label for="input-vidaUtil">Vida Útil(Em anos)</label><br>
             <input type="number" id="input-vidaUtil" dadoRequerido="true">
         </div>
         <div class="box-menor">
-            <label for="input-tempoUso">Tempo de Uso</label><br>
+            <label for="input-tempoUso">Tempo de Uso(Em meses)</label><br>
             <input type="number" id="input-tempoUso" dadoRequerido="true">
         </div>
         <label for="btn-calcular" id="label-aviso">Preencha todos os campos com valores positivos</label>
@@ -32,6 +36,18 @@
         <div class="box-menor">
             <label for="input-depreciacao">Depreciação</label><br>
             <input type="number" id="input-depreciacao" readonly>
+        </div>
+        <div class="box-menor">
+            <label for="input-valorContabil">Valor Contábil</label><br>
+            <input type="number" id="input-valorContabil" readonly>
+        </div>
+        <div class="box-menor">
+            <label for="input-depreciacaoAnual">Depreciação Anual</label><br>
+            <input type="number" id="input-depreciacaoAnual" readonly>
+        </div>
+        <div class="box-menor">
+            <label for="input-depreciacaoAnual">Depreciação Mensal</label><br>
+            <input type="number" id="input-depreciacaoMensal" readonly>
         </div>
     </div>
     <script src="assets/js/main.js"></script>
