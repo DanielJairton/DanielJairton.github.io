@@ -1,0 +1,16 @@
+#box-maior{
+    margin-top: 5vh;
+}
+
+.soLeitura{
+    visibility: hidden;
+    /* visibility: visible; */
+}
+
+h1{
+    text-align: center;
+}
+
+#logo_CNPJ{
+    height: 65px; width: 65px;
+}

@@ -1,3 +1,11 @@
+function tornarVisivel(){
+    const soLeitura = document.querySelectorAll('.soLeitura');
+    console.log(soLeitura);
+    for (let index = 0; index < soLeitura.length; index++) {
+        soLeitura[index].style.visibility = 'visible';
+    }
+}
+
 function validarCnpj(cnpj){
     $.ajax({
         'url':'https://receitaws.com.br/v1/cnpj/' + cnpj.replace(/[^0-9]/g, ''),
@@ -18,6 +26,7 @@ function validarCnpj(cnpj){
                 document.getElementById('municipio').value = dado.municipio;
                 document.getElementById('estado').value = dado.uf;
                 document.getElementById('telefone').value = dado.telefone;
+                tornarVisivel();
             }
         }
     })

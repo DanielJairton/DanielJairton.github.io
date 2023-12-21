@@ -3,11 +3,16 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Consulta CNPJ</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon_io/">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon_io/favicon-16x16.png">
+    <!-- <link rel="manifest" href="/site.webmanifest"> -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/global.css">
+    <title>Consulta CNPJ</title>
   </head>
   <body class="bg-body-secondary">
-    <div class="row">
+    <div class="row" id="box-maior">
         <div class="col-md-4">
             
         </div>
@@ -15,56 +20,61 @@
         <div class="col-md-4">
             <div class="row">
                 <div class="col-md-12">
-                    <h1>Consulta CNPJ</h1>
+                    <h1><img src="assets/img/cnpj_logo.png" alt="logo_CNPJ" id="logo_CNPJ">  Consulta CNPJ</h1>
                 </div>
             </div>
             <div class="form-group row">
-                <div class="col-md-12">
+                <div class="col-md-10">
                     <label for="cnpj">CNPJ</label>
                     <input type="text" data-mask="00.000.000/0000-00" id="cnpj" class="form-control" onblur="validarCnpj(this.value)">
+                    
+                </div>
+                <div class="col-md-2">
+                    <br>
+                    <button class="btn btn-primary" onclick="validarCnpj(document.getElementById('cnpj').value)">Buscar</button>
+                </div>
+            </div><br>
+            <div class="form-group row">
+                <div class="col-md-12">
+                    <label for="razaoSocial" class="soLeitura">Razão social</label>
+                    <input type="text" id="razaoSocial" class="form-control soLeitura" readonly>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-6">
+                    <label for="fantasia" class="soLeitura">Nome Fantasia</label>
+                    <input type="text" id="fantasia" class="form-control soLeitura" readonly>
+                </div>
+                <div class="col-md-6">
+                    <label for="abertura" class="soLeitura">Abertura</label>
+                    <input type="text" id="abertura" class="form-control soLeitura" readonly>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-6">
+                    <label for="situacao" class="soLeitura">Situação</label>
+                    <input type="text" id="situacao" class="form-control soLeitura" readonly>
+                </div>
+                <div class="col-md-6">
+                    <label for="estado" class="soLeitura">Estado</label>
+                    <input type="text" id="estado" class="form-control soLeitura" readonly>
                 </div>
             </div>
             <div class="form-group row">
                 <div class="col-md-12">
-                    <label for="razaoSocial">Razão social</label>
-                    <input type="text" id="razaoSocial" class="form-control" readonly>
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-md-6">
-                    <label for="fantasia">Nome Fantasia</label>
-                    <input type="text" id="fantasia" class="form-control" readonly>
-                </div>
-                <div class="col-md-6">
-                    <label for="abertura">Abertura</label>
-                    <input type="text" id="abertura" class="form-control" readonly>
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-md-6">
-                    <label for="situacao">Situação</label>
-                    <input type="text" id="situacao" class="form-control" readonly>
-                </div>
-                <div class="col-md-6">
-                    <label for="estado">Estado</label>
-                    <input type="text" id="estado" class="form-control" readonly>
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-md-12">
-                    <label for="endereco">Endereço</label>
-                    <input type="text" id="endereco" class="form-control" readonly>
+                    <label for="endereco" class="soLeitura">Endereço</label>
+                    <input type="text" id="endereco" class="form-control soLeitura" readonly>
                 </div>
             </div>
             <div class="form-group row">
                
                 <div class="col-md-6">
-                    <label for="municipio">Munícipio</label>
-                    <input type="text" id="municipio" class="form-control" readonly>
+                    <label for="municipio" class="soLeitura">Munícipio</label>
+                    <input type="text" id="municipio" class="form-control soLeitura" readonly>
                 </div>
                 <div class="col-md-6">
-                    <label for="telefone">Telefone</label>
-                    <input type="text" id="telefone" class="form-control" readonly>
+                    <label for="telefone" class="soLeitura">Telefone</label>
+                    <input type="text" id="telefone" class="form-control soLeitura" readonly>
                 </div>
             </div>
             <div class="form-group row">
