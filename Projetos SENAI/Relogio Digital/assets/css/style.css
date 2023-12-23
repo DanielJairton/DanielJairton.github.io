@@ -53,3 +53,13 @@ body{
 .tempo{
     font-size: 15px;
 }
+
+@media screen and (max-width: 800px) {
+    #relogio{
+        width: 95vw;
+    }
+    #relogio div{
+        width: 33.33%;
+        
+    }
+}

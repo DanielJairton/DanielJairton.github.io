@@ -6,6 +6,10 @@
   margin-top: 1vh;
 }
 
+#task{
+  width: 189px;
+}
+
 .box-maior{
   justify-content: center;
   margin-left: 2.5vw;
@@ -31,4 +35,10 @@
   overflow: hidden;
   height: auto;
   width: 20px;
+}
+
+@media screen and (max-width: 800px){
+  #task{
+    width: 150px;
+  }
 }
