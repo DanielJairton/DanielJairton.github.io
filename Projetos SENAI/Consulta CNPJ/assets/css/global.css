@@ -14,3 +14,14 @@ h1{
 #logo_CNPJ{
     height: 65px; width: 65px;
 }
+
+@media screen and (max-width: 800px) {
+    #box-maior{
+        width: 95vw;
+        margin-left: 2.5vw;
+        margin-right: 2.5vw;
+    }
+    #btn-buscar{
+        margin-left: 40%;
+    }
+}

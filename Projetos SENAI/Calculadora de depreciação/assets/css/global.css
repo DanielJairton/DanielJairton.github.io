@@ -75,7 +75,8 @@ body{
     /* border: 5px solid aqua; */
     border: 3px solid cadetblue;
     outline: solid;
-    outline-color: rgba(240, 248, 255, 0.397);
+    /* outline-color: rgba(240, 248, 255, 0.397); */
+    outline-color: rgba(95, 158, 160, 0.267);
 }
 
 #label-aviso{
@@ -95,3 +96,11 @@ body{
     background-color: cadetblue;
     border-style: none;
 }
+
+@media screen and (max-width: 450px) {
+    .box-maior{
+        width: 95vw;
+        margin-left: 2.5vw;
+        margin-right: 2.5vw;
+    }
+  }
