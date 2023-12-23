@@ -1,0 +1,9 @@
+Formulário para cadastro
+   -Contêm nome, telefone residensial/celular, gênero, data de nascimento, senha, confirmar senha,
+   -Endereço: logadouro(Av., Rua, Praça etc), número, complemento, estado, cidade, bairro, cep
+   - CPF, RG, Orgão Emissor
+
+Extensões
+   -Live Server, ,php
+
+Xampp control panel

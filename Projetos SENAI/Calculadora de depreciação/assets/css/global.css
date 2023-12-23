@@ -30,8 +30,8 @@ body{
     border: 2px solid black;
 }
 
-#titulo{
-    margin-left: 2%;
+.titulo{
+    text-align: center;
 }
 
 #box-resultado{
@@ -52,12 +52,30 @@ body{
     font-size: large;
 }
 
+
 .box-menor input{
     margin-left: 20%;
     margin-right: 20%;
     height: 25px;
     width: 55%;
-    border: .5px solid black;
+    border: 2px solid black;
+    outline: none;
+}
+
+.box-menor .input-invalido{
+    margin-left: 20%;
+    margin-right: 20%;
+    height: 25px;
+    width: 55%;
+    border: 2px solid red;
+}
+
+.box-menor input:focus{
+    background-color: aliceblue;
+    /* border: 5px solid aqua; */
+    border: 3px solid cadetblue;
+    outline: solid;
+    outline-color: rgba(240, 248, 255, 0.397);
 }
 
 #label-aviso{
@@ -70,10 +88,10 @@ body{
 #btn-calcular{
     height: 30px;
     width: 80px;
-    /* margin-inline: 43%; */
     margin-left: 40%;
     border-radius: 5px;
     color: white;
-    background-color: rgb(14, 178, 233);
+    /* background-color: rgb(14, 178, 233); */
+    background-color: cadetblue;
     border-style: none;
 }

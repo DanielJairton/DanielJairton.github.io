@@ -13,14 +13,27 @@ var inputsRequeridos = document.querySelectorAll("[dadoRequerido='true']");
 function testeInputs(inputsRequeridos){
     let contador = 0;
     for (let index = 0; index < inputsRequeridos.length; index++) {
-        if (inputsRequeridos[index].value == "" || inputsRequeridos[index].value < 0) {
-            inputsRequeridos[index].style.border = ".5px solid red"
+        if (inputsRequeridos[index].value == "" || inputsRequeridos[index].value <= 0) {
+            // inputsRequeridos[index].style.border = ".5px solid red";
+            inputsRequeridos[index].className = "input-invalido";
             contador = contador+1;
         }
         else{
-            inputsRequeridos[index].style.border = ".5px solid black"
+            // inputsRequeridos[index].style.border = ".5px solid black";
+            inputsRequeridos[index].className = "";
         }
     }
+
+    if(valorSucata.value == "" || valorSucata.value < 0){
+        // valorSucata.style.border = ".5px solid red";
+        valorSucata.className = "input-invalido";
+        contador = contador+1;
+    }
+    else{
+        valorSucata.className = "";
+    }
+
+
     if (contador > 0) {
         document.getElementById('label-aviso').style.visibility = 'visible';
         return false;
@@ -36,6 +49,8 @@ document.getElementById('btn-calcular').addEventListener('click', function(){
     if (testeInputs(inputsRequeridos) == false) {
         return;
     }
+
+    //Taxa de depreciação - Máquinas e equipamentos (10%)
 
     //Calculo
     document.getElementById('input-depreciacao').value = ((valorTotal.value-valorSucata.value)/vidaUtil.value)*(tempoUso.value/12);

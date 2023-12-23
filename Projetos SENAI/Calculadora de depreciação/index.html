@@ -6,20 +6,21 @@
     <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon_io/">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon_io/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon_io/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/global.css">
-    <title>Calculadora de Depreciação</title>
+    <title>Calculadora de Depreciação - Máquinas e Equipamentos</title>
 </head>
 <body>
     <div class="box-maior">
-        <h1 id="titulo">Calculadora de Depreciação</h1>
+        <h3 class="titulo">Calculadora de Depreciação</h3>
+        <h3 class="titulo">Máquinas e Equipamentos</h3>
         <div class="box-menor">
             <label for="input-valorTotal">Valor Total</label><br>
             <input type="number" id="input-valorTotal" dadoRequerido="true">
         </div>
         <div class="box-menor">
             <label for="input-valorSucata">Valor Sucata</label><br>
-            <input type="number" id="input-valorSucata" dadoRequerido="true">
+            <input type="number" id="input-valorSucata">
         </div>
         <div class="box-menor">
             <label for="input-vidaUtil">Vida Útil(Em anos)</label><br>
@@ -35,21 +36,22 @@
     <div class="box-maior" id="box-resultado">
         <div class="box-menor">
             <label for="input-depreciacao">Depreciação</label><br>
-            <input type="number" id="input-depreciacao" readonly>
+            <input type="number" id="input-depreciacao" disabled>
         </div>
         <div class="box-menor">
             <label for="input-valorContabil">Valor Contábil</label><br>
-            <input type="number" id="input-valorContabil" readonly>
+            <input type="number" id="input-valorContabil" disabled>
         </div>
         <div class="box-menor">
             <label for="input-depreciacaoAnual">Depreciação Anual</label><br>
-            <input type="number" id="input-depreciacaoAnual" readonly>
+            <input type="number" id="input-depreciacaoAnual" disabled>
         </div>
         <div class="box-menor">
             <label for="input-depreciacaoAnual">Depreciação Mensal</label><br>
-            <input type="number" id="input-depreciacaoMensal" readonly>
+            <input type="number"  id="input-depreciacaoMensal" disabled>
         </div>
     </div>
     <script src="assets/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
