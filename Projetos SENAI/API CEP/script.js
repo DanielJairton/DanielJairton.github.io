@@ -1,6 +1,7 @@
 
 function pesquisar(){
     let cep = document.getElementById('input-cep').value;
+    cep = cep.replace(/-/g, "");
     dados(cep)
 }
 

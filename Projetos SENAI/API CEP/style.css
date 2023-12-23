@@ -17,16 +17,40 @@ body{
     background-size: cover;
 }
 
+h1{
+    text-align: center;
+}
+
 .box-maior{
     background: rgb(37, 36, 36);
     opacity: 0.95;
     color: azure;
     padding: 30px;
     border-radius: 20px;
+    width: 700px;
 
+}
+
+.label-readonly{
+    margin-left: 2.5%;
 }
 
 .input-grande{
     margin: 10px;
-    width: 450px;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    /* width: 450px; */
+    width: 95%;
+}
+
+input:focus{
+    background-color: aliceblue;
+}
+
+@media screen and (max-width: 800px) {
+    .box-maior{
+        width: 95vw;
+        margin-left: 2.5vw;
+        margin-right: 2.5vw;
+    }
 }
