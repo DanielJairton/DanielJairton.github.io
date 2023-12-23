@@ -21,3 +21,14 @@
 .lista{
   padding: 15px;
 }
+
+.btn-remover{
+  border-radius: 100%;
+  padding: 2px;
+  text-align: center;
+  font-size: smaller;
+  font-size: 9px;
+  overflow: hidden;
+  height: auto;
+  width: 20px;
+}

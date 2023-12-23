@@ -3,11 +3,16 @@ function botaoFechar(li){
     let span = document.createElement("SPAN");
     // let txt = document.createElement("text");
     // txt.textContent = "\u00D7";
-    let txt = document.createTextNode("\u00D7");
+    // let txt = document.createTextNode("\u00D7");
+
+    const btnRemover = document.createElement('button');
+    btnRemover.className = "btn-remover btn btn-danger";
+    btnRemover.innerHTML = "X";
 
 
     span.className = "close";
-    span.appendChild(txt);
+    span.appendChild(btnRemover)
+    // span.appendChild(txt);
     li.appendChild(span);
     span.onclick = () => span.parentElement.style.display = "none";
 }
