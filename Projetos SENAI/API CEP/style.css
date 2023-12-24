@@ -53,4 +53,8 @@ input:focus{
         margin-left: 2.5vw;
         margin-right: 2.5vw;
     }
+
+    #input-cep{
+        width: 140px;
+    }
 }
