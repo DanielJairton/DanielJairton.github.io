@@ -52,7 +52,13 @@ body{
 
 @media screen and (max-width: 800px){
     #img-produtoDesktop{display: none;}
-    #img-produtoMobile{display: flex;  width: 100%; height: 40%;}
+    #img-produtoMobile{
+        display: flex;
+        width: 100%;
+        height: 40%;
+        border-start-start-radius: 5%;
+        border-start-end-radius: 5%;
+    }
     #box-img{order: 1; width: 100%; height: 40%;}
 
     body{
