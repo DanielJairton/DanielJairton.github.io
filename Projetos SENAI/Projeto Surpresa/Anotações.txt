@@ -1,0 +1,10 @@
+Coisas que aconteceram na aula
+
+- Projeto surpresa(foto no grupo)
+-
+
+
+Ideias para o projeto
+-API Fixer: Veja a atual taxa de câmbio entre as diferentes moedas.
+-API The Open Movie Database (OMDb): O OMDb contém diferentes tipos de filmes que você pode usar em seus projetos.
+-API de Informações do País — Descubra Detalhes do Mundo Todo: Country Information API - bigdatacloud
