@@ -1,0 +1,7 @@
+Páginas
+    -Pedido
+        -Divs: Bebidas, Sanduíches, Lanches, Tabela do pedido
+            -Nome; img produto; selector: produto, tamanho; input: quantidade
+    -Catalogo
+    -Login
+    -Cadastro
