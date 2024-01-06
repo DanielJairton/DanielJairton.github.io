@@ -71,7 +71,7 @@
             <div class="col-md-1">
               <br>
               <!-- <button type="button" class="btn btn-primary" id="btn-bebida"><img src="assets/img/add.svg" alt="+"></button> -->
-              <button type="button" class="btn btn-primary" id="btn-bebida">+</button>
+              <button type="button" class="btn btn-primary" id="btn-addBebida">+</button>
             </div>
           </div>
         </div>
@@ -125,7 +125,7 @@
             <div class="col-md-1">
               <br>
               <!-- <button type="button" class="btn btn-primary" id="btn-bebida"><img src="assets/img/add.svg" alt="+"></button> -->
-              <button type="button" class="btn btn-primary" id="btn-lanches">+</button>
+              <button type="button" class="btn btn-primary" id="btn-addLanche">+</button>
             </div>
 
           </div>
@@ -135,22 +135,24 @@
           <table class="table-pedido table table-info table-hover" id="table-pedido">
             <tr>
               <th>Produto</th>
-              <th>Quant.</th>
+              <th>Unidade</th>
               <th>Preço Un.</th>
+              <th>Quant.</th>
               <th>Total</th>
             </tr>
-            <tr>
+            <!-- <tr>
+              <td>Suco</td>
               <td></td>
               <td></td>
               <td></td>
               <td></td>
-            </tr>
+            </tr> -->
           </table>
 
           <div class="form-group row">
             <div class="col-md-2">
               <label for="input-total">Valor Total</label>
-              <input type="number" id="input-total" class="form-control" readonly>
+              <input type="text" id="input-total" class="form-control" readonly>
             </div>
 
             <div class="col-md-1">
@@ -165,10 +167,10 @@
       </form>
 
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="assets/js/dados.js"></script>
     <script src="assets/js/carregarDados.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   </body>
 </html>
 

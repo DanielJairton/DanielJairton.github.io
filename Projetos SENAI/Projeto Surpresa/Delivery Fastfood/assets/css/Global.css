@@ -35,3 +35,7 @@ body{
 .titulo{
     text-align: center;
 }
+
+.cellPedido{
+    background-color: aliceblue;
+}

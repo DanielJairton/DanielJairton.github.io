@@ -1,3 +1,8 @@
+//Variáveis da tabela
+var precoUnLinha = 0;
+var valorTotalLinha = 0;
+var valorTotalTabela = 0;
+
 //Carrega os dados no select select-bebidas
 function carregarTiposBebida(){
     const selectTipoBebidas = document.getElementById('select-bebidas');
@@ -46,14 +51,20 @@ function carregarPrecoBebida(){
     let quantidadeBebida = document.getElementById('input-quantBebidas').value;
 
     if (valorSelectTamanho >= 1 && quantidadeBebida > 0) {
-        let precoUn = tamanhosBebida[valorSelectTamanho-1].precoUn;
-        document.getElementById('input-unBebidas').value = "R$ " + precoUn;
-        document.getElementById('input-totalBebidas').value = "R$ " + precoUn*quantidadeBebida;
+        // let precoUn = tamanhosBebida[valorSelectTamanho-1].precoUn;
+        precoUnLinha = tamanhosBebida[valorSelectTamanho-1].precoUn;
+        valorTotalLinha = precoUnLinha*quantidadeBebida;
+        // document.getElementById('input-unBebidas').value = "R$ " + precoUnLinha;
+        // document.getElementById('input-totalBebidas').value = "R$ " + valorTotalLinha;
     }
     else{
-        document.getElementById('input-unBebidas').value = "R$ " + 0;
-        document.getElementById('input-totalBebidas').value = "R$ " + 0;
+        precoUnLinha = 0;
+        valorTotalLinha = 0;
+        // document.getElementById('input-unBebidas').value = "R$ " + 0;
+        // document.getElementById('input-totalBebidas').value = "R$ " + 0;
     }
+    document.getElementById('input-unBebidas').value = "R$ " + precoUnLinha;
+    document.getElementById('input-totalBebidas').value = "R$ " + valorTotalLinha;
 }
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -106,14 +117,20 @@ function carregarPrecoLanche(){
     let quantidadeLanche = document.getElementById('input-quantLanches').value;
 
     if (valorSelectPorcao >= 1 && quantidadeLanche > 0) {
-        let precoUn = porcaoLanche[valorSelectPorcao-1].precoUn;
-        document.getElementById('input-unLanches').value = "R$ " + precoUn;
-        document.getElementById('input-totalLanches').value = "R$ " + precoUn*quantidadeLanche;
+        // let precoUn = porcaoLanche[valorSelectPorcao-1].precoUn;
+        precoUnLinha = porcaoLanche[valorSelectPorcao-1].precoUn;
+        valorTotalLinha = precoUnLinha*quantidadeLanche;
+        // document.getElementById('input-unLanches').value = "R$ " + precoUnLinha;
+        // document.getElementById('input-totalLanches').value = "R$ " + valorTotalLinha;
     }
     else{
-        document.getElementById('input-unLanches').value = "R$ " + 0;
-        document.getElementById('input-totalLanches').value = "R$ " + 0;
+        precoUnLinha = 0;
+        valorTotalLinha = 0;
+        // document.getElementById('input-unLanches').value = "R$ " + 0;
+        // document.getElementById('input-totalLanches').value = "R$ " + 0;
     }
+    document.getElementById('input-unLanches').value = "R$ " + precoUnLinha;
+    document.getElementById('input-totalLanches').value = "R$ " + valorTotalLinha;
 }
 
 carregarTiposBebida();
