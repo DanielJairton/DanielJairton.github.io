@@ -132,6 +132,3 @@ function carregarPrecoLanche(){
     document.getElementById('input-unLanches').value = "R$ " + precoUnLinha;
     document.getElementById('input-totalLanches').value = "R$ " + valorTotalLinha;
 }
-
-carregarTiposBebida();
-carregarTiposLanche();
