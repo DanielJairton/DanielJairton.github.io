@@ -35,6 +35,22 @@ body{
     padding: 7px;
 }
 
+#div-table-precoBebida{
+    visibility: hidden;
+    visibility: visible;
+    border: 0px;
+}
+
+#div-table-precoLanche{
+    visibility: hidden;
+    visibility: visible;
+    border: 0px;
+}
+
+.cellPreco{
+    background-color: #FFF3CF;
+}
+
 .titulo{
     text-align: center;
 }

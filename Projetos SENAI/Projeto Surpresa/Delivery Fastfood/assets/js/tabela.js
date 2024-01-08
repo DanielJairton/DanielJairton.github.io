@@ -10,6 +10,7 @@ function criarItensTabela(secao){
 
     //Inserir itens da seção de bebidas na tabela
     if (secao == 0) {
+        //Chamo a função carregarPrecoBebida() para garantiar a validação dos valores
         carregarPrecoBebida();
         var campoProduto = document.getElementById('select-bebidas');
         var campoUnidade = document.getElementById('select-tamanhoBebidas');
@@ -19,6 +20,7 @@ function criarItensTabela(secao){
     }
     //Inserir itens da seção de lanches na tabela
     else{
+        //Chamo a função carregarPrecoLanche() para garantiar a validação dos valores
         carregarPrecoLanche();
         var campoProduto = document.getElementById('select-tipolanches');
         var campoUnidade = document.getElementById('select-porcaoLanche');
@@ -84,4 +86,25 @@ function criarBtnRemoverLinha(tabela, objLinha, numeroLinha){
         objLinha.appendChild(btnRemoverLinha);
     })
     return btnRemoverLinha;
+}
+
+//Cria uma tabela com os preços do tipo de produto selecionado
+//Incompleto
+function criarTabelaPrecos(secao){
+    //Para a seção de bebidas
+    if (secao == 1) {
+        var campoProduto = document.getElementById('select-bebidas');
+    }
+    //Para a seção de lanches
+    else{
+        var campoProduto = document.getElementById('select-tipolanches');
+    }
+    let linha = document.createElement('tr');
+
+    let tdProduto = document.createElement('td');
+    tdProduto.className = "table-warning cellPreco";
+    let tdUnidade = document.createElement('td');
+    tdUnidade.className = "table-warning cellPreco";
+    let tdPreco = document.createElement('td');
+    tdPreco.className = "table-warning cellPreco";
 }

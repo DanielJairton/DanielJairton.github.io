@@ -29,7 +29,7 @@
 
           <div class="box-input form-group row">
 
-            <div class="col-md-3">
+            <div class="col-md-2">
               <label for="select-bebidas">Bebida</label>
               <select id="select-bebidas" class="form-select" onchange="carregarTamanhoBebidas()">
                 <optgroup>
@@ -41,7 +41,7 @@
               </select>
             </div>
 
-            <div class="col-md-3">
+            <div class="col-md-2">
               <label for="select-tamanhoBebidas">Tamanho</label>
               <select id="select-tamanhoBebidas" class="form-select" onchange="carregarPrecoBebida()">
                 <optgroup>
@@ -63,7 +63,7 @@
               <input type="text" id="input-unBebidas" class="form-control" readonly>
             </div>
 
-            <div class="col-md-1">
+            <div class="col-md-2">
               <label for="input-totalBebidas">Total</label>
               <input type="text" id="input-totalBebidas" class="form-control" readonly>
             </div>
@@ -73,6 +73,18 @@
               <!-- <button type="button" class="btn btn-primary" id="btn-bebida"><img src="assets/img/add.svg" alt="+"></button> -->
               <button type="button" class="btn btn-primary" id="btn-addBebida">+</button>
             </div>
+
+            <!-- Tabela de Preços do tipo do de bebida -->
+            <div class="col-md-3 div-table-Preco" id="div-table-precoBebida">
+              <table class="table-precoBebida table table-warning table-hover" id="table-precoBebida">
+                <tr>
+                  <th>Bebida</th>
+                  <th>Tamanho</th>
+                  <th>Preço</th>
+                </tr>
+              </table>
+            </div>
+
           </div>
         </div>
 
@@ -81,7 +93,7 @@
           <h5>Lanches</h5>
 
           <div class="box-input form-group row">
-            <div class="col-md-3">
+            <div class="col-md-2">
 
               <label for="select-tipolanches">Lanches</label>
               <select id="select-tipolanches" class="form-select" onchange="carregarPorcaoLanche()">
@@ -95,7 +107,7 @@
               </select>
             </div>
 
-            <div class="col-md-3">
+            <div class="col-md-2">
               <label for="select-porcaoLanche">Porção</label>
               <select id="select-porcaoLanche" class="form-select" onchange="carregarPrecoLanche()">
                 <optgroup>
@@ -117,7 +129,7 @@
               <input type="text" id="input-unLanches" class="form-control" readonly>
             </div>
 
-            <div class="col-md-1">
+            <div class="col-md-2">
               <label for="input-totalLanches">Total</label>
               <input type="text" id="input-totalLanches" class="form-control" readonly>
             </div>
@@ -126,6 +138,17 @@
               <br>
               <!-- <button type="button" class="btn btn-primary" id="btn-bebida"><img src="assets/img/add.svg" alt="+"></button> -->
               <button type="button" class="btn btn-primary" id="btn-addLanche">+</button>
+            </div>
+
+            <!-- Tabela de Preços do tipo do de bebida -->
+            <div class="col-md-3 div-table-Preco" id="div-table-precoLanche">
+              <table class="table-precoLanche table table-warning table-hover" id="table-precoLanche">
+                <tr>
+                  <th>Lanche</th>
+                  <th>Porção</th>
+                  <th>Preço</th>
+                </tr>
+              </table>
             </div>
 
           </div>
