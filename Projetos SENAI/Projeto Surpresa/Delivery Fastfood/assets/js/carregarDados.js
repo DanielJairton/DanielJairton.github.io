@@ -43,6 +43,7 @@ function carregarTamanhoBebidas(){
     })
 
     carregarPrecoBebida();
+    criarTabelaPrecos(1);
 }
 
 //Carrega o preço unitário e total de bebidadas
@@ -109,6 +110,7 @@ function carregarPorcaoLanche(){
     })
 
     carregarPrecoLanche();
+    criarTabelaPrecos(2);
 }
 
 //Carregar o preço unitário e total do lanche

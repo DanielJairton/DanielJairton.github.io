@@ -2,7 +2,7 @@ var numeroLinha = 0;
 //Criar itens na tabela
 function criarItensTabela(secao){
     if (valorTotalLinha == 0) {
-        console.log("Entrada inválida");
+        // console.log("Entrada inválida");
         return;
     }
     // console.log("Criar Itens Tabela");
@@ -89,22 +89,108 @@ function criarBtnRemoverLinha(tabela, objLinha, numeroLinha){
 }
 
 //Cria uma tabela com os preços do tipo de produto selecionado
-//Incompleto
 function criarTabelaPrecos(secao){
+
     //Para a seção de bebidas
+
     if (secao == 1) {
+        var tabelaPrecos = document.getElementById('table-precoBebida');
+
+        //Remove as linhas antigas da tabela de preços
+        let linhasAntigas = document.querySelectorAll('.linhaPrecoBebida');
+        linhasAntigas.forEach(function (linhaAntiga) {
+            tabelaPrecos.removeChild(linhaAntiga)
+        })
+
+        //Validção da opção selecionada
+        var selectTipo = document.getElementById('select-bebidas');
+        if ( selectTipo.options[selectTipo.selectedIndex].value > -1) {
+            // console.log("Opção válida " + selectTipo.options[selectTipo.selectedIndex].value);
+        }
+        else{
+            // console.log("Opção inválida" + selectTipo.options[selectTipo.selectedIndex].value);
+            return;
+        }
+
         var campoProduto = document.getElementById('select-bebidas');
+        var campoUnidade = document.getElementById('select-tamanhoBebidas');
+        var classeLinhaPreco = "linhaPrecoBebida";
+
+        let valorTipo = document.getElementById('select-bebidas').value;
+        var dadosUnidadesFiltrados = tamanhosBebida.filter((d)=>d.idTipoBebida == valorTipo);
+        // console.log(dadosUnidadesFiltrados);
     }
     //Para a seção de lanches
     else{
-        var campoProduto = document.getElementById('select-tipolanches');
-    }
-    let linha = document.createElement('tr');
+        var tabelaPrecos = document.getElementById('table-precoLanche');
 
-    let tdProduto = document.createElement('td');
-    tdProduto.className = "table-warning cellPreco";
-    let tdUnidade = document.createElement('td');
-    tdUnidade.className = "table-warning cellPreco";
-    let tdPreco = document.createElement('td');
-    tdPreco.className = "table-warning cellPreco";
+        //Remove as linhas antigas da tabela de preços
+
+        let linhasAntigas = document.querySelectorAll('.linhaPrecoLanche');
+        linhasAntigas.forEach(function (linhaAntiga) {
+            tabelaPrecos.removeChild(linhaAntiga)
+        })
+
+        //Validção da opção selecionada
+        var selectTipo = document.getElementById('select-tipolanches');
+        if ( selectTipo.options[selectTipo.selectedIndex].value > -1) {
+            // console.log("Opção válida " + selectTipo.options[selectTipo.selectedIndex].value);
+        }
+        else{
+            // console.log("Opção inválida" + selectTipo.options[selectTipo.selectedIndex].value);
+            return;
+        }
+
+        var campoProduto = document.getElementById('select-tipolanches');
+        var campoUnidade = document.getElementById('select-porcaoLanche');
+        var classeLinhaPreco = "linhaPrecoLanche";
+        
+        let valorTipo = document.getElementById('select-tipolanches').value;
+        var dadosUnidadesFiltrados = porcaoLanche.filter((d)=>d.idTipoLanche == valorTipo);
+        // console.log(dadosUnidadesFiltrados);
+    }
+
+    // let linha = document.createElement('tr');
+
+    // let tdProduto = document.createElement('td');
+    // tdProduto.className = "table-warning cellPreco";
+    // let tdUnidade = document.createElement('td');
+    // tdUnidade.className = "table-warning cellPreco";
+    // let tdPreco = document.createElement('td');
+    // tdPreco.className = "table-warning cellPreco";
+
+    // tdProduto.innerHTML = campoProduto.options[campoProduto.selectedIndex].text;
+
+    let listaOpUnidades = campoUnidade.options;
+    // console.log(listaOpUnidades);
+    
+    for (let index = 1; index < listaOpUnidades.length; index++) {
+
+        let linha = document.createElement('tr');
+        linha.className = classeLinhaPreco;
+
+        let tdProduto = document.createElement('td');
+        tdProduto.className = "table-warning cellPreco";
+        tdProduto.style.marginLeft = "5px";
+        let tdUnidade = document.createElement('td');
+        tdUnidade.className = "table-warning cellPreco";
+        let tdPreco = document.createElement('td');
+        tdPreco.className = "table-warning cellPreco";
+
+        // console.log(listaOpUnidades[index].text);
+        
+        tdProduto.innerHTML = campoProduto.options[campoProduto.selectedIndex].text;
+        tdUnidade.innerHTML = listaOpUnidades[index].text;
+        tdPreco.innerHTML = "R$ " + dadosUnidadesFiltrados[index-1].precoUn;
+
+        linha.appendChild(tdProduto);
+        linha.appendChild(tdUnidade);
+        linha.appendChild(tdPreco);
+
+        tabelaPrecos.appendChild(linha);
+
+    }
+
 }
+
+document.getElementById('input-total').value = "R$ " + 0;
