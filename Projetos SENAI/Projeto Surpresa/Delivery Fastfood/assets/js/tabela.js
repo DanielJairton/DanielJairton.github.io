@@ -1,9 +1,7 @@
 var numeroLinha = 0;
-//Criar itens na tabela
+//Criar itens na tabela que lista os itens do pedido
 function criarItensTabela(secao){
-    // if (valorTotalLinha == 0) {
-    //     return;
-    // }
+    
     const tabelaPedidos = document.getElementById('table-pedido');
 
     //Inserir itens da seção de bebidas na tabela
@@ -81,15 +79,18 @@ function criarBtnRemoverLinha(tabela, objLinha, numeroLinha){
         btnRemoverLinha.className = "cellBtn";
         btnRemoverLinha.innerHTML = "<button class='btnRemoverLinha' id='btnRemoverLinha" + numeroLinha + "'>X</button>";
     
+    //Cria o escutador de evento de cada botão
     btnRemoverLinha.addEventListener('click', function(){
         if (objLinha && tabela.contains(objLinha)) {
 
+            //Diminui o valor total da tabela pelo total da linha a ser removida
             var colunas = objLinha.getElementsByTagName('td');
             let valorTotalLinhaTexto = colunas[4].innerText;
             valorTotalTabela = valorTotalTabela - parseFloat(valorTotalLinhaTexto.replace("R$ ", ""));
             document.getElementById('input-total').value = "R$ " + valorTotalTabela;
             // console.log("Linha removida nº" + numeroLinha);
 
+            //Remove a linha da tabela
             tabela.removeChild(objLinha);
         }
 
@@ -98,6 +99,8 @@ function criarBtnRemoverLinha(tabela, objLinha, numeroLinha){
     return btnRemoverLinha;
 }
 
+
+//Função obsoleta
 function apagarLinha(tabela, objLinha, numeroLinha){
     if (objLinha && tabela.contains(objLinha)) {
 
@@ -115,8 +118,7 @@ function apagarLinha(tabela, objLinha, numeroLinha){
 function criarTabelaPrecos(secao){
 
     //Para a seção de bebidas
-
-    if (secao == 1) {
+    if (secao == 0) {
         var tabelaPrecos = document.getElementById('table-precoBebida');
 
         //Remove as linhas antigas da tabela de preços
@@ -135,20 +137,22 @@ function criarTabelaPrecos(secao){
             return;
         }
 
+        //Pega os campos da seção de bebidas
         var campoProduto = document.getElementById('select-bebidas');
         var campoUnidade = document.getElementById('select-tamanhoBebidas');
         var classeLinhaPreco = "linhaPrecoBebida";
 
+        //Filtra os itens para só aparecerem os tamanhos do tipo de bebida selecionado
         let valorTipo = document.getElementById('select-bebidas').value;
         var dadosUnidadesFiltrados = tamanhosBebida.filter((d)=>d.idTipoBebida == valorTipo);
         // console.log(dadosUnidadesFiltrados);
     }
+
     //Para a seção de lanches
     else{
         var tabelaPrecos = document.getElementById('table-precoLanche');
 
         //Remove as linhas antigas da tabela de preços
-
         let linhasAntigas = document.querySelectorAll('.linhaPrecoLanche');
         linhasAntigas.forEach(function (linhaAntiga) {
             tabelaPrecos.removeChild(linhaAntiga)
@@ -164,10 +168,12 @@ function criarTabelaPrecos(secao){
             return;
         }
 
+        //Pega os campos da seção de lanches
         var campoProduto = document.getElementById('select-tipolanches');
         var campoUnidade = document.getElementById('select-porcaoLanche');
         var classeLinhaPreco = "linhaPrecoLanche";
         
+        //Filtra os itens para só aparecerem as porções do tipo de lanche selecionado
         let valorTipo = document.getElementById('select-tipolanches').value;
         var dadosUnidadesFiltrados = porcaoLanche.filter((d)=>d.idTipoLanche == valorTipo);
         // console.log(dadosUnidadesFiltrados);
@@ -184,14 +190,18 @@ function criarTabelaPrecos(secao){
 
     // tdProduto.innerHTML = campoProduto.options[campoProduto.selectedIndex].text;
 
+    //Lista de opções de unidades(tamanho/porção)
     let listaOpUnidades = campoUnidade.options;
     // console.log(listaOpUnidades);
     
+    //Cria as linhas da tabela
     for (let index = 1; index < listaOpUnidades.length; index++) {
 
+        //Linha
         let linha = document.createElement('tr');
         linha.className = classeLinhaPreco;
 
+        //Colunas
         let tdProduto = document.createElement('td');
         tdProduto.className = "table-warning cellPreco";
         tdProduto.style.marginLeft = "5px";
@@ -202,16 +212,18 @@ function criarTabelaPrecos(secao){
 
         // console.log(listaOpUnidades[index].text);
         
+        //Valores da coluna que vem dos dados
         tdProduto.innerHTML = campoProduto.options[campoProduto.selectedIndex].text;
         tdUnidade.innerHTML = listaOpUnidades[index].text;
         tdPreco.innerHTML = "R$ " + dadosUnidadesFiltrados[index-1].precoUn;
 
+        //Insere colunas na linha
         linha.appendChild(tdProduto);
         linha.appendChild(tdUnidade);
         linha.appendChild(tdPreco);
 
+        //Insere a linha na tabela
         tabelaPrecos.appendChild(linha);
-
     }
 
 }

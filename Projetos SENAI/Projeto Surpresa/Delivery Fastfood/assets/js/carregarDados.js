@@ -43,7 +43,7 @@ function carregarTamanhoBebidas(){
     })
 
     carregarPrecoBebida();
-    criarTabelaPrecos(1);
+    criarTabelaPrecos(0);
 }
 
 //Carrega o preço unitário e total de bebidadas
@@ -51,18 +51,14 @@ function carregarPrecoBebida(){
     let valorSelectTamanho = document.getElementById('select-tamanhoBebidas').value;
     let quantidadeBebida = document.getElementById('input-quantBebidas').value;
 
-    if (valorSelectTamanho >= 1 && quantidadeBebida > 0) {
-        // let precoUn = tamanhosBebida[valorSelectTamanho-1].precoUn;
+    //Testa a validade da opção selecionada e o valor da quatidade
+    if (valorSelectTamanho >= 1 && quantidadeBebida > 0 && Number.isInteger(parseFloat(quantidadeBebida))) {
         precoUnLinha = tamanhosBebida[valorSelectTamanho-1].precoUn;
         valorTotalLinha = precoUnLinha*quantidadeBebida;
-        // document.getElementById('input-unBebidas').value = "R$ " + precoUnLinha;
-        // document.getElementById('input-totalBebidas').value = "R$ " + valorTotalLinha;
     }
     else{
         precoUnLinha = 0;
         valorTotalLinha = 0;
-        // document.getElementById('input-unBebidas').value = "R$ " + 0;
-        // document.getElementById('input-totalBebidas').value = "R$ " + 0;
     }
     document.getElementById('input-unBebidas').value = "R$ " + precoUnLinha;
     document.getElementById('input-totalBebidas').value = "R$ " + valorTotalLinha;
@@ -110,7 +106,7 @@ function carregarPorcaoLanche(){
     })
 
     carregarPrecoLanche();
-    criarTabelaPrecos(2);
+    criarTabelaPrecos(1);
 }
 
 //Carregar o preço unitário e total do lanche
@@ -118,18 +114,14 @@ function carregarPrecoLanche(){
     let valorSelectPorcao = document.getElementById('select-porcaoLanche').value;
     let quantidadeLanche = document.getElementById('input-quantLanches').value;
 
-    if (valorSelectPorcao >= 1 && quantidadeLanche > 0) {
-        // let precoUn = porcaoLanche[valorSelectPorcao-1].precoUn;
+    //Testa a validade da opção selecionada e o valor da quatidade
+    if (valorSelectPorcao >= 1 && quantidadeLanche > 0 && Number.isInteger(parseFloat(quantidadeLanche))) {
         precoUnLinha = porcaoLanche[valorSelectPorcao-1].precoUn;
         valorTotalLinha = precoUnLinha*quantidadeLanche;
-        // document.getElementById('input-unLanches').value = "R$ " + precoUnLinha;
-        // document.getElementById('input-totalLanches').value = "R$ " + valorTotalLinha;
     }
     else{
         precoUnLinha = 0;
         valorTotalLinha = 0;
-        // document.getElementById('input-unLanches').value = "R$ " + 0;
-        // document.getElementById('input-totalLanches').value = "R$ " + 0;
     }
     document.getElementById('input-unLanches').value = "R$ " + precoUnLinha;
     document.getElementById('input-totalLanches').value = "R$ " + valorTotalLinha;

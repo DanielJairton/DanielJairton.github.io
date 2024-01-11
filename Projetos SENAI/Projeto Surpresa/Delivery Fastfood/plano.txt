@@ -5,3 +5,7 @@ Páginas
     -Catalogo
     -Login
     -Cadastro
+
+O que estou fazendo atualmente:
+    -Comentando:
+        - carregarDados.js, pedido.html
