@@ -55,23 +55,23 @@
 
             <div class="col-md-1">
               <label for="input-quantBebidas">Quant.</label>
-              <input type="number" id="input-quantBebidas" class="form-control" value="1" min="1" onchange="carregarPrecoBebida()">
+              <input type="number" id="input-quantBebidas" class="form-control" value="1" min="1" onchange="carregarPrecoBebida()" onkeyup="carregarPrecoBebida()" on>
             </div>
 
             <div class="col-md-1">
               <label for="input-unBebidas">Valor Un.</label>
-              <input type="text" id="input-unBebidas" class="form-control" readonly>
+              <input type="text" id="input-unBebidas" class="form-control campoDisabled" disabled>
             </div>
 
             <div class="col-md-2">
               <label for="input-totalBebidas">Total</label>
-              <input type="text" id="input-totalBebidas" class="form-control" readonly>
+              <input type="text" id="input-totalBebidas" class="form-control campoDisabled" disabled>
             </div>
 
             <div class="col-md-1">
               <br>
               <!-- <button type="button" class="btn btn-primary" id="btn-bebida"><img src="assets/img/add.svg" alt="+"></button> -->
-              <button type="button" class="btn btn-primary btn-add" id="btn-addBebida">+</button>
+              <button type="button" class="btn btn-primary btn-add" id="btn-addBebida" onclick="criarItensTabela(0)">+</button>
             </div>
 
             <!-- Tabela de Preços do tipo do de bebida -->
@@ -95,7 +95,7 @@
           <div class="box-input form-group row">
             <div class="col-md-2">
 
-              <label for="select-tipolanches">Lanches</label>
+              <label for="select-tipolanches">Lanche</label>
               <select id="select-tipolanches" class="form-select" onchange="carregarPorcaoLanche()">
                 <optgroup>
                   <!-- <option disabled selected value>Selecione</option>
@@ -121,23 +121,23 @@
 
             <div class="col-md-1">
               <label for="input-quantLanches">Quant.</label>
-              <input type="number" id="input-quantLanches" class="form-control" value="1" min="1" onchange="carregarPrecoLanche()">
+              <input type="number" id="input-quantLanches" class="form-control" value="1" min="1" onchange="carregarPrecoLanche()" onkeyup="carregarPrecoLanche()">
             </div>
 
             <div class="col-md-1">
               <label for="input-unLanches">Valor Un.</label>
-              <input type="text" id="input-unLanches" class="form-control" readonly>
+              <input type="text" id="input-unLanches" class="form-control campoDisabled" disabled>
             </div>
 
             <div class="col-md-2">
               <label for="input-totalLanches">Total</label>
-              <input type="text" id="input-totalLanches" class="form-control" readonly>
+              <input type="text" id="input-totalLanches" class="form-control campoDisabled" disabled>
             </div>
 
             <div class="col-md-1">
               <br>
               <!-- <button type="button" class="btn btn-primary" id="btn-bebida"><img src="assets/img/add.svg" alt="+"></button> -->
-              <button type="button" class="btn btn-primary btn-add" id="btn-addLanche">+</button>
+              <button type="button" class="btn btn-primary btn-add" id="btn-addLanche" onclick="criarItensTabela(1)">+</button>
             </div>
 
             <!-- Tabela de Preços do tipo do de bebida -->
@@ -176,13 +176,17 @@
           <div class="form-group row">
             <div class="col-md-2">
               <label for="input-total">Valor Total</label>
-              <input type="text" id="input-total" class="form-control" readonly>
+              <input type="text" id="input-total" class="form-control campoDisabled" disabled>
             </div>
 
             <div class="col-md-1">
               <br>
-              <button type="button" id="btn-gravar" class="btn btn-primary">Confirmar</button>
+              <button type="button" id="btn-confirmar" class="btn btn-primary">Confirmar</button>
             </div>
+          </div>
+
+          <div class="col-md-6">
+            <span id="span-avisoTotal">Adicione pelo menos um item a lista do pedido antes de confirmar</span>
           </div>
 
         </div>

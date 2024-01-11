@@ -1,0 +1,21 @@
+#body-index{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-entrar{
+    width: 370px;
+    border: 2px solid black;
+    border-radius: 9px;
+    margin-top: 30vh;
+}
+
+.lb-entrar{
+    text-align: left;
+}
+
+#body-index input, #body-index button{
+    margin-bottom: 10px;
+}

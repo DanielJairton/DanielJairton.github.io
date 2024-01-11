@@ -1,0 +1,13 @@
+.box-maior{
+    width: 80vw;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-medio{
+    padding: 10px
+}

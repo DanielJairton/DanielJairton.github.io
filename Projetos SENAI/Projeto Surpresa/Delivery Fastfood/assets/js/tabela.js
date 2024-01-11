@@ -1,15 +1,18 @@
 var numeroLinha = 0;
 //Criar itens na tabela
 function criarItensTabela(secao){
-    if (valorTotalLinha == 0) {
-        // console.log("Entrada inválida");
-        return;
-    }
-    // console.log("Criar Itens Tabela");
+    // if (valorTotalLinha == 0) {
+    //     return;
+    // }
     const tabelaPedidos = document.getElementById('table-pedido');
 
     //Inserir itens da seção de bebidas na tabela
     if (secao == 0) {
+        //Se o valor é igual a 0 não adicionar a tabela de pedidos
+        if (document.getElementById('input-totalBebidas').value == "R$ 0") {
+            // console.log('Valor 0 em bebida');
+            return;
+        }
         //Chamo a função carregarPrecoBebida() para garantiar a validação dos valores
         carregarPrecoBebida();
         var campoProduto = document.getElementById('select-bebidas');
@@ -20,6 +23,11 @@ function criarItensTabela(secao){
     }
     //Inserir itens da seção de lanches na tabela
     else{
+        //Se o valor é igual a 0 não adicionar a tabela de pedidos
+        if (document.getElementById('input-totalLanches').value == "R$ 0") {
+            // console.log('Valor 0 em lanche');
+            return;
+        }
         //Chamo a função carregarPrecoLanche() para garantiar a validação dos valores
         carregarPrecoLanche();
         var campoProduto = document.getElementById('select-tipolanches');
@@ -75,17 +83,32 @@ function criarBtnRemoverLinha(tabela, objLinha, numeroLinha){
     
     btnRemoverLinha.addEventListener('click', function(){
         if (objLinha && tabela.contains(objLinha)) {
-            tabela.removeChild(objLinha);
 
             var colunas = objLinha.getElementsByTagName('td');
             let valorTotalLinhaTexto = colunas[4].innerText;
             valorTotalTabela = valorTotalTabela - parseFloat(valorTotalLinhaTexto.replace("R$ ", ""));
             document.getElementById('input-total').value = "R$ " + valorTotalTabela;
+            // console.log("Linha removida nº" + numeroLinha);
+
+            tabela.removeChild(objLinha);
         }
 
-        objLinha.appendChild(btnRemoverLinha);
+        // objLinha.appendChild(btnRemoverLinha);
     })
     return btnRemoverLinha;
+}
+
+function apagarLinha(tabela, objLinha, numeroLinha){
+    if (objLinha && tabela.contains(objLinha)) {
+
+        var colunas = objLinha.getElementsByTagName('td');
+        let valorTotalLinhaTexto = colunas[4].innerText;
+        valorTotalTabela = valorTotalTabela - parseFloat(valorTotalLinhaTexto.replace("R$ ", ""));
+        document.getElementById('input-total').value = "R$ " + valorTotalTabela;
+        console.log("Linha removida nº" + numeroLinha);
+
+        tabela.removeChild(objLinha);
+    }
 }
 
 //Cria uma tabela com os preços do tipo de produto selecionado
@@ -192,5 +215,3 @@ function criarTabelaPrecos(secao){
     }
 
 }
-
-document.getElementById('input-total').value = "R$ " + 0;
