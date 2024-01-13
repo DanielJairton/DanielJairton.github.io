@@ -226,3 +226,5 @@ function criarTabelaPrecos(secao){
     }
 
 }
+
+//teste
