@@ -3,19 +3,8 @@ body{
     background-repeat: no-repeat;
 }
 
-.box-maior{
-    padding: 5px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 97.5vw;
-    margin-top: 3vh;
-    margin-left: 1.25vw;
-    margin-right: 1.25vw;
-    background-color: white;
-    border: 4px solid rgb(255, 165, 0);
-    border-radius: 20px;
+.titulo{
+    text-align: center;
 }
 
 .img-iconeTitulo{
@@ -28,88 +17,6 @@ body{
     width: 30x;
 }
 
-.box-medio{
-    margin-bottom: 1.5vh;
-    border: 2px solid rgb(255, 165, 0);
-    border-radius: 5px;
-    padding: 7px;
-}
-
-.btn-add{
-    height: 38px;
-    width: 38px;
-    font-size: larger;
-    text-align: center;
-    line-height: 0px;
-}
-
-.btn-add:hover{
-    transform: scale(1.2);
-    transition: transform 2s;
-}
-
-#div-table-precoBebida{
-    visibility: hidden;
-    visibility: visible;
-    border: 0px;
-}
-
-#div-table-precoLanche{
-    visibility: hidden;
-    visibility: visible;
-    border: 0px;
-}
-
-.cellPreco{
-    background-color: #faf1d6;
-    border-bottom: .5px solid rgba(128, 128, 128, 0.089);
-    height: 35px;
-}
-
-.titulo{
-    text-align: center;
-}
-
-.cellPedido{
-    background-color: #e4f9fd;
-    border-bottom: .5px solid black;
-    height: 35px;
-    /* background-color: #CFF4FC; */
-}
-
-.btnRemoverLinha{
-    height: 35px;
-    width: 35px;
-    color: white;
-    border-radius: 100%;
-    background-color: red;
-    line-height: 8px;
-    text-align: center;
-    border: none;
-    /* display: inline-flex;
-    align-items: flex-end; */
-}
-
-.btnRemoverLinha:hover{
-    color: white;
-    background: red;
-    transform: scale(1.2);
-    /* box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; */
-    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
-    transition: transform 2s, box-shadow 2s;
-}
-
-.cellBtn{
-    background-color: white;
-    border-left: .5px solid black;
-    /* border-bottom: .5px solid black; */
-}
-
 .campoDisabled:disabled{
     background-color: white;
-}
-
-#span-avisoTotal{
-    visibility: hidden;
-    color: red;
 }

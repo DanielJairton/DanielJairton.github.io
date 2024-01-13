@@ -9,17 +9,18 @@
     <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon_io/favicon-16x16.png">
     <link rel="icon" type="image/x-icon" href="assets/img/favicon_io/favicon.ico">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/Global.css">
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/pedido.css">
   </head>
 
   <body class="bg-danger bg-gradient">
-    <div class="box-maior row">
+    <div class="box-maiorPedido row">
       <h1 class="titulo"><img src="assets/img/fast-food-hot-dog-svgrepo-com.png" alt="" class="img-iconeTitulo">Pedido</h1>
 
       <form id="form-pedido">
         
         <!-- Secção de bebidas -->
-        <div class="box-medio ">
+        <div class="box-medioPedido">
           <div class="form-group row">
             <div class="col-md-11">
               <h4 class="align-text-bottom">Bebidas</h4>
@@ -71,14 +72,16 @@
             <div class="col-md-1">
               <br>
               <!-- <button type="button" class="btn btn-primary" id="btn-bebida"><img src="assets/img/add.svg" alt="+"></button> -->
-              <button type="button" class="btn btn-primary btn-add" id="btn-addBebida" onclick="criarItensTabela(0)">+</button>
+              <div class="div-btnAdd">
+                <button type="button" class="btn btn-primary btn-add" id="btn-addBebida" onclick="criarItensTabela(0)">+</button>
+              </div>
             </div>
 
             <!-- Tabela de Preços do tipo do de bebida -->
             <div class="col-md-3 div-table-Preco" id="div-table-precoBebida">
               <table class="table-precoBebida table table-warning table-hover" id="table-precoBebida">
                 <tr>
-                  <th>Bebida</th>
+                  <!-- <th>Bebida</th> -->
                   <th>Tamanho</th>
                   <th>Preço</th>
                 </tr>
@@ -89,7 +92,7 @@
         </div>
 
         <!-- Seção de sanduíches -->
-        <div class="box-medio ">
+        <div class="box-medioPedido">
           <h5>Lanches</h5>
 
           <div class="box-input form-group row">
@@ -137,14 +140,16 @@
             <div class="col-md-1">
               <br>
               <!-- <button type="button" class="btn btn-primary" id="btn-bebida"><img src="assets/img/add.svg" alt="+"></button> -->
-              <button type="button" class="btn btn-primary btn-add" id="btn-addLanche" onclick="criarItensTabela(1)">+</button>
+              <div class="div-btnAdd">
+                <button type="button" class="btn btn-primary btn-add" id="btn-addLanche" onclick="criarItensTabela(1)">+</button>
+              </div>
             </div>
 
             <!-- Tabela de Preços do tipo do de bebida -->
             <div class="col-md-3 div-table-Preco" id="div-table-precoLanche">
               <table class="table-precoLanche table table-warning table-hover" id="table-precoLanche">
                 <tr>
-                  <th>Lanche</th>
+                  <!-- <th>Lanche</th> -->
                   <th>Porção</th>
                   <th>Preço</th>
                 </tr>
@@ -162,6 +167,7 @@
               <th>Preço Un.</th>
               <th>Quant.</th>
               <th>Total</th>
+              <th id="th-btnRemover"></th>
               <!-- <th></th> -->
             </tr>
             <!-- <tr>

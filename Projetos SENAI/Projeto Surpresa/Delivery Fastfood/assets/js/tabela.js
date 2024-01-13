@@ -204,7 +204,6 @@ function criarTabelaPrecos(secao){
         //Colunas
         let tdProduto = document.createElement('td');
         tdProduto.className = "table-warning cellPreco";
-        tdProduto.style.marginLeft = "5px";
         let tdUnidade = document.createElement('td');
         tdUnidade.className = "table-warning cellPreco";
         let tdPreco = document.createElement('td');
@@ -218,7 +217,7 @@ function criarTabelaPrecos(secao){
         tdPreco.innerHTML = "R$ " + dadosUnidadesFiltrados[index-1].precoUn;
 
         //Insere colunas na linha
-        linha.appendChild(tdProduto);
+        // linha.appendChild(tdProduto);
         linha.appendChild(tdUnidade);
         linha.appendChild(tdPreco);
 
