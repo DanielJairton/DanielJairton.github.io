@@ -39,15 +39,15 @@ function criarItensTabela(secao){
     linha.className = "";
 
     const tdProduto = document.createElement('td');
-    tdProduto.className = "table-info cellPedido";
+    tdProduto.className = "cellPedido";
     const tdUnidade = document.createElement('td');
-    tdUnidade.className = "table-info cellPedido";
+    tdUnidade.className = "cellPedido";
     const tdPrecoUn = document.createElement('td');
-    tdPrecoUn.className = "table-info cellPedido";
+    tdPrecoUn.className = "cellPedido";
     const tdQuantidade = document.createElement('td');
-    tdQuantidade.className = "table-info cellPedido";
+    tdQuantidade.className = "cellPedido";
     const tdTotal = document.createElement('td');
-    tdTotal.className = "table-info cellPedido";
+    tdTotal.className = "cellPedido";
 
     const btnRemoverLinha = document.createElement('td');
 
@@ -226,5 +226,3 @@ function criarTabelaPrecos(secao){
     }
 
 }
-
-//teste
