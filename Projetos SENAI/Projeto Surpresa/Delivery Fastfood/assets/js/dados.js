@@ -137,5 +137,11 @@ const porcaoLanche = [
         "idTipoLanche": 4,
         "porcao": "Normal",
         "precoUn": 4
-    }
+    }/*,
+    {
+        "idPorcaoLanche": 9,
+        "idTipoLanche": 4,
+        "porcao": "Grande",
+        "precoUn": 4.55
+    }*/
 ]

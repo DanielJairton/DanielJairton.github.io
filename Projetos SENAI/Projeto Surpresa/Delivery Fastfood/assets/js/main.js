@@ -29,14 +29,15 @@ document.getElementById('input-quantLanches').addEventListener("keypress", funct
     }
 });
 
-// document.getElementById('input-total').addEventListener("change", function(){
-//     if (document.getElementById('input-total').value == "R$ " + 0) {
-//         return;
-//     }
-//     else{
-//         document.getElementById('span-avisoTotal').style.visibility = "hidden";
-//     }
-// })
+//Não deixa o campo total ter um valor negativo
+/*document.getElementById('input-total').addEventListener("change", function(){
+    let totalTabelaTexto = document.getElementById('input-total').value.replace(",", ".");
+    totalTabelaTexto = totalTabelaTexto.replace("R$ ", "");
+
+    if (parseFloat(totalTabelaTexto) < 0) {
+        document.getElementById('input-total').value = "R$ 0";
+    }
+})*/
 
 //Recarrega a página quando confirmado
 document.getElementById('btn-confirmar').addEventListener('click', function(){
@@ -52,3 +53,7 @@ document.getElementById('btn-confirmar').addEventListener('click', function(){
         }
     }
 });
+
+let num = 5.56789;
+let n = num.toFixed(2);  // 5.56
+console.log(num, n, Math.round(num));
