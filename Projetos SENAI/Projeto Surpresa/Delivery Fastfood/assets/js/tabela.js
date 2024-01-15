@@ -99,7 +99,6 @@ function criarBtnRemoverLinha(tabela, objLinha, numeroLinha){
     return btnRemoverLinha;
 }
 
-
 //Função obsoleta
 function apagarLinha(tabela, objLinha, numeroLinha){
     if (objLinha && tabela.contains(objLinha)) {
