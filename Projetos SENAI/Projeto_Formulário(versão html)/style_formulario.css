@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 *{
     margin: 0;
     padding: 0;
@@ -121,4 +122,129 @@ body{
     background-color: #3c95e9;
     border-style: none;
     border-radius: 4px;
+=======
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    box-sizing: border-box;
+
+}
+
+body{
+    /* height: 100vh;
+    width: 100vw; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #3c95e9;
+}
+
+.form-cadastro{
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    height: fit-content;
+    background: rgb(37, 36, 36);
+    opacity: 0.95;
+    color: azure;
+    padding: 30px;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.input-nomeCadastro{
+    width: 350px;
+}
+
+.label-celular{
+    margin-left: 27px;
+}
+
+.input-telefoneCelular{
+    margin-left: 10px;
+}
+
+.input-email{
+    width: 350px;
+}
+
+#input-dataNascimento{
+    width: 145px;
+}
+
+#label-genero{
+    margin-left: 55px;
+}
+
+.select-genero{
+    margin-left: 52px;
+}
+
+#label-rg{
+    margin-left: 145px;
+}
+
+#input-rg{
+    margin-left: 10px;
+}
+
+#input-orgaoEmissor{
+    width: 100px;
+}
+
+#label-uf{
+    margin-left: 15px;
+}
+
+#input-uf{
+    width: 50px;
+    margin-left: 15px;
+}*/
+
+.input-usuarioCadastro{
+    width: 250px;
+}
+
+.input-senhaCadastro{
+    width: 250px;
+}
+
+.input-senhaConfirmar{
+    width: 250px;
+}
+
+#input-logadouro{
+    width: 350px;
+}
+
+#input-bairro{
+    width: 350px;
+}
+
+#label-numero{
+    margin-left: 73px;
+}
+
+#input-numeroResidencia{
+    margin-left: 10px;
+}
+
+#label-cidade{
+    margin-left: 125px;
+}
+
+#input-cidade{
+    margin-left: 10px;
+}
+
+
+#submit{
+    margin-left: 40%;
+    height: 0.75cm;
+    width: 2cm;
+    color: white;
+    background-color: #3c95e9;
+    border-style: none;
+    border-radius: 4px;
+>>>>>>> f25751819df287a990d5932e0aa5796998432843
 }
