@@ -60,8 +60,8 @@ function carregarPrecoBebida(){
         precoUnLinha = 0;
         valorTotalLinha = 0;
     }
-    document.getElementById('input-unBebidas').value = "R$ " + precoUnLinha;
-    document.getElementById('input-totalBebidas').value = "R$ " + valorTotalLinha;
+    document.getElementById('input-unBebidas').value = "R$ " + (precoUnLinha.toFixed(2)).replace(".", ",");
+    document.getElementById('input-totalBebidas').value = "R$ " + (valorTotalLinha.toFixed(2)).replace(".", ",");
 }
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -123,6 +123,6 @@ function carregarPrecoLanche(){
         precoUnLinha = 0;
         valorTotalLinha = 0;
     }
-    document.getElementById('input-unLanches').value = "R$ " + precoUnLinha;
-    document.getElementById('input-totalLanches').value = "R$ " + valorTotalLinha;
+    document.getElementById('input-unLanches').value = "R$ " + (precoUnLinha.toFixed(2)).replace(".", ",");
+    document.getElementById('input-totalLanches').value = "R$ " + (valorTotalLinha.toFixed(2)).replace(".", ",");
 }

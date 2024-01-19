@@ -24,49 +24,49 @@ const tamanhosBebida = [
         "idTamanhoBebida": 2,
         "idTipoBebida": 1,
         "tamanho": "1L",
-        "precoUn": 4
+        "precoUn": 4.50
     },
     {
         "idTamanhoBebida": 3,
         "idTipoBebida": 1,
         "tamanho": "2L",
-        "precoUn": 7
+        "precoUn": 7.35
     },
     {
         "idTamanhoBebida": 4,
         "idTipoBebida": 2,
         "tamanho": "500ml",
-        "precoUn": 5
+        "precoUn": 5.10
     },
     {
         "idTamanhoBebida": 5,
         "idTipoBebida": 2,
         "tamanho": "1L",
-        "precoUn": 9
+        "precoUn": 9.20
     },
     {
         "idTamanhoBebida": 6,
         "idTipoBebida": 2,
         "tamanho": "2L",
-        "precoUn": 13
+        "precoUn": 13.70
     },
     {
         "idTamanhoBebida": 7,
         "idTipoBebida": 3,
         "tamanho": "500ml",
-        "precoUn": 6
+        "precoUn": 6.20
     },
     {
         "idTamanhoBebida": 8,
         "idTipoBebida": 3,
         "tamanho": "1L",
-        "precoUn": 14
+        "precoUn": 14.40
     },
     {
         "idTamanhoBebida": 9,
         "idTipoBebida": 3,
         "tamanho": "1,5L",
-        "precoUn": 18
+        "precoUn": 18.90
     }
 ]
 
@@ -137,11 +137,11 @@ const porcaoLanche = [
         "idTipoLanche": 4,
         "porcao": "Normal",
         "precoUn": 4
-    }/*,
+    },
     {
         "idPorcaoLanche": 9,
         "idTipoLanche": 4,
         "porcao": "Grande",
         "precoUn": 4.55
-    }*/
+    }
 ]

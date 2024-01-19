@@ -7,6 +7,10 @@ body{
     text-align: center;
 }
 
+.titulo img{
+    vertical-align: top;
+}
+
 .img-iconeTitulo{
     height: 40px;
     width: 40px;

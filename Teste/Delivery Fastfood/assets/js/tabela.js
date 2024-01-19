@@ -68,7 +68,7 @@ function criarItensTabela(secao){
 
     const campoTotalTabela = document.getElementById('input-total');
     valorTotalTabela = valorTotalTabela+valorTotalLinha;
-    campoTotalTabela.value = "R$ " + valorTotalTabela;
+    campoTotalTabela.value = "R$ " + valorTotalTabela.toFixed(2);
 
     numeroLinha = numeroLinha+1;
 }
@@ -86,8 +86,34 @@ function criarBtnRemoverLinha(tabela, objLinha, numeroLinha){
             //Diminui o valor total da tabela pelo total da linha a ser removida
             var colunas = objLinha.getElementsByTagName('td');
             let valorTotalLinhaTexto = colunas[4].innerText;
-            valorTotalTabela = valorTotalTabela - parseFloat(valorTotalLinhaTexto.replace("R$ ", ""));
-            document.getElementById('input-total').value = "R$ " + valorTotalTabela;
+
+            /*console.log("Texto da coluna do total da linha: '" + valorTotalLinhaTexto + "'");
+            console.log("Texto convertido: " + valorTotalLinhaTexto.replace("R$ ", ""));
+            console.log("")*/
+
+
+            //console.log(valorTotalTabela + " - " + parseFloat(valorTotalLinhaTexto.replace("R$ ", "")) + " = " + (valorTotalTabela - parseFloat(valorTotalLinhaTexto.replace("R$ ", ""))));
+
+            var textoMenosValor = valorTotalLinhaTexto.replace("R$ ", "");
+            // console.log(textoMenosValor);
+            var menosValor = parseFloat(textoMenosValor);
+            // console.log(menosValor);
+            // console.log(valorTotalTabela + "-" + menosValor + " = " + (valorTotalTabela-menosValor));
+
+            //valorTotalTabela = valorTotalTabela - parseFloat(valorTotalLinhaTexto.replace("R$ ", ""));
+            console.log(parseFloat((valorTotalTabela - menosValor).toFixed(2)));
+            valorTotalTabela = parseFloat((valorTotalTabela - menosValor).toFixed(2));
+            console.log(valorTotalTabela, valorTotalTabela.toFixed(2));
+            document.getElementById('input-total').value = "R$ " + valorTotalTabela.toFixed(2);
+
+            /* Consertou o erro de decimais neg
+            var precoRedu = (parseFloat(valorTotalLinhaTexto.replace("R$ ", ""))).toFixed(2);
+            precoRedu = parseFloat(precoRedu);
+
+            valorTotalTabela = valorTotalTabela - precoRedu ;
+            document.getElementById('input-total').value = "R$ " + (valorTotalTabela.toFixed(2));
+            */
+
             // console.log("Linha removida nº" + numeroLinha);
 
             //Remove a linha da tabela
