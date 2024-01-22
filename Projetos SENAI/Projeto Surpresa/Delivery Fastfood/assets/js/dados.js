@@ -60,13 +60,13 @@ const tamanhosBebida = [
         "idTamanhoBebida": 8,
         "idTipoBebida": 3,
         "tamanho": "1L",
-        "precoUn": 14.40
+        "precoUn": 10.40
     },
     {
         "idTamanhoBebida": 9,
         "idTipoBebida": 3,
         "tamanho": "1,5L",
-        "precoUn": 18.90
+        "precoUn": 12.90
     }
 ]
 
@@ -94,7 +94,7 @@ const porcaoLanche = [
         "idPorcaoLanche": 1,
         "idTipoLanche": 1,
         "porcao": "Pequeno",
-        "precoUn": 4
+        "precoUn": 4.10
     },
     {
         "idPorcaoLanche": 2,
@@ -106,13 +106,13 @@ const porcaoLanche = [
         "idPorcaoLanche": 3,
         "idTipoLanche": 1,
         "porcao": "Grande",
-        "precoUn": 10
+        "precoUn": 10.60
     },
     {
         "idPorcaoLanche": 4,
         "idTipoLanche": 2,
         "porcao": "Pequeno",
-        "precoUn": 6
+        "precoUn": 6.30
     },
     {
         "idPorcaoLanche": 5,
@@ -124,24 +124,18 @@ const porcaoLanche = [
         "idPorcaoLanche": 6,
         "idTipoLanche": 2,
         "porcao": "Grande",
-        "precoUn": 15
+        "precoUn": 15.40
     },
     {
         "idPorcaoLanche": 7,
         "idTipoLanche": 3,
         "porcao": "Normal",
-        "precoUn": 8
+        "precoUn": 8.80
     },
     {
         "idPorcaoLanche": 8,
         "idTipoLanche": 4,
         "porcao": "Normal",
-        "precoUn": 4
-    },
-    {
-        "idPorcaoLanche": 9,
-        "idTipoLanche": 4,
-        "porcao": "Grande",
-        "precoUn": 4.55
+        "precoUn": 4.10
     }
 ]
