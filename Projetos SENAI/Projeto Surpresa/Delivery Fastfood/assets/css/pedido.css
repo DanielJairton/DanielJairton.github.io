@@ -31,6 +31,12 @@
     padding: 7px;
 }
 
+.div-btnAddTabelaPreco{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
 .label-icone{
     line-height: 0px;
     font-size: 30px;
