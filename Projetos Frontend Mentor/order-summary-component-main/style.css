@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-body{
+#body{
     background-color: hsl(225, 100%, 94%);
 }
 
@@ -40,45 +40,111 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 15px;
 }
 
 .box-texto .box-plan{
-    width: 86%;
+    width: 90%;
+    height: 80px;
     border-radius: 4%;
-    background-color: hsl(225, 100%, 94%);
+    background-color: hsla(225, 100%, 94%, 0.3);
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 }
 
-.box-texto .box-plan .box-span{
+.box-texto p{
+    width: 347px;
+    color: hsl(224, 23%, 55%);
+    height: fit-content;
+    text-align: center;
+    font-weight: 400;
+}
+
+.box-texto h3{
+    font-weight: 900;
+    margin-top: 25px;
+    color: hsl(223, 47%, 23%);
+}
+
+#annualPlan{
+    font-weight: 700;
+    color: hsl(223, 47%, 23%);
+}
+
+#preco{
+    color: hsl(224, 23%, 55%);
+}
+
+.box-texto .box-plan #box-span{
     display: flex;
     flex-direction: column;
-    justify-content: left;
+    justify-content: center;
     align-items: start;
+    margin-left: 20px;
+    margin-right: 100px;
+}
+
+#icon-music{
+    border-radius: 100%;
+    background-color: hsl(225, 100%, 94%);
 }
 
 .box-texto #btn-proceed{
-    width: 86%;
+    width: 100%;
     background-color: hsl(245, 75%, 52%);
     border: none;
-    border-radius: 5%;
+    border-radius: 9px;
     color: white;
     font-size: medium;
+    font-weight: 500;
+    box-shadow: 0px 20px 10px 0px rgba(37, 80, 255, 0.12);
 }
 
 .box-texto #btn-cancel{
-    width: 86%;
+    width: 100%;
     border: none;
     background: none;
     color: hsl(224, 23%, 55%);
     font-size: medium;
+    font-weight: 500;
+    margin-bottom: 20px;
 }
 
-/* h3, p{
+.btn-a {
+    padding: 0;
+    width: 387px;
+    height: 65px;
+}
+
+.btn button{
+    height: 100%;
+}
+
+h3, p{
     text-align: center;
-} */
+}
+
+@media screen and (max-width: 600px) {
+    .box-medio, .box-img, .box-texto{
+        width: 90vw;
+    }
+    .box-img{
+        height: 180px;
+    }
+    #img-box{
+        width: 100%;
+        height: 100%;
+    }
+    .btn-a, .box-plan{
+        width: 100%;
+    }
+    .box-texto .box-plan #box-span{
+        margin-left: 5%;
+        margin-right: 20%;
+    }
+}
 
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }

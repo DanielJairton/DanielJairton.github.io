@@ -1,0 +1,47 @@
+*{
+    padding: 0;
+    margin: 0;
+    color: white;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-maior{
+    width: 90vw;
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-medio{
+    width: 30vw;
+    padding: 2%;
+}
+
+.box-medio button {
+    background-color: white;
+    margin-left: 5%;
+    border-radius: 10px;
+}
+
+#box-sedans{
+    background-color: hsl(31, 77%, 52%);
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+}
+
+#box-suvs {
+    background-color: hsl(184, 100%, 22%);
+}
+
+#box-luxury {
+    background-color: hsl(179, 100%, 13%);
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
