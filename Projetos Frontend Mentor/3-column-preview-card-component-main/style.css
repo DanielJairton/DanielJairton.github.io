@@ -10,9 +10,10 @@ body {
     align-items: center;
 }
 
-.box-maior{
-    width: 90vw;
-    margin-top: 5vh;
+.box-maior {
+    width: 60vw;
+    height: 433px;
+    margin-top: 20vh;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -20,28 +21,92 @@ body {
 }
 
 .box-medio{
-    width: 30vw;
+    width: 20vw;
+    height: 100%;
     padding: 2%;
+}
+
+.box-medio img, .box-medio h2 {
+    margin-bottom: 25px;
+    font-family: "Lexend Deca";
+}
+
+.box-medio p {
+    width: 85%;
+    color: hsla(0, 0%, 100%, 0.75);
+    font-family: "Big Shoulders Display";
+    font-size: 17px;
 }
 
 .box-medio button {
     background-color: white;
-    margin-left: 5%;
-    border-radius: 10px;
+    border: 2px solid white;
+    border-radius: 19px;
 }
 
-#box-sedans{
+#box-sedans {
     background-color: hsl(31, 77%, 52%);
     border-top-left-radius: 7px;
     border-bottom-left-radius: 7px;
+}
+
+#box-sedans button {
+    color: hsl(31, 77%, 52%);
+    margin-top: 75px;
 }
 
 #box-suvs {
     background-color: hsl(184, 100%, 22%);
 }
 
+#box-suvs button {
+    color: hsl(184, 100%, 22%);
+    margin-top: 50.5px;
+}
+
 #box-luxury {
     background-color: hsl(179, 100%, 13%);
     border-top-right-radius: 7px;
     border-bottom-right-radius: 7px;
+}
+
+#box-luxury button {
+    color: hsl(179, 100%, 13%);
+    margin-top: 75px;
+}
+
+#box-sedans button:hover, #box-suvs button:hover,
+#box-luxury button:hover {
+    color: white;
+    border: 2px solid white;
+    background-color: transparent;
+    transition: 1s;
+}
+
+@media screen and (max-width: 600px) {
+    .box-maior {
+        width: 80vw;
+        flex-direction: column;
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+        height: fit-content;
+    }
+    .box-medio {
+        height: fit-content;
+        padding: 20px;
+        width: 100%;
+    }
+    .box-medio img {
+        margin-top: 15px;
+    }
+    #box-sedans {
+        border-top-left-radius: 7px;
+        border-top-right-radius: 7px;
+        border-bottom-left-radius: 0px;
+    }
+    #box-luxury {
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 7px;
+        border-bottom-left-radius: 7px;
+    }
 }
