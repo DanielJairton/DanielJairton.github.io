@@ -82,7 +82,3 @@
 .box-medio .cardBox .cardPreco::before {
     content: "R$ ";
 }
-
-/* ::-webkit-scrollbar {
-    border-color: orange;
-} */
