@@ -7,8 +7,8 @@ function carregarMenus(dadosMenu, divSecao) {
 
         cardBox.innerHTML = "<div class='cardBox'>" +
         "<img src='" + dadosMenu[index].imgUrl + "' alt='item' class='cardImg'>" +
-        "<h4 class='cardTitulo'>"+ dadosMenu[index].titulo +"</h4>" +
-        "<span class='cardPreco'>" + dadosMenu[index].preco + "</span>" +
+        "<h4 class='cardTitulo'>" + dadosMenu[index].titulo +"</h4>" +
+        "<span class='cardPreco'>" + dadosMenu[index].preco.toFixed(2).replace(".",",") + "</span>" +
         "</div>";
 
         divSecao.appendChild(cardBox);
