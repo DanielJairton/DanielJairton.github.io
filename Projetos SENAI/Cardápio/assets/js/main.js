@@ -6,7 +6,9 @@ function carregarMenus(dadosMenu, divSecao) {
         let cardBox = document.createElement('div');
 
         cardBox.innerHTML = "<div class='cardBox'>" +
+        "<div class='cardImg'>" +
         "<img src='" + dadosMenu[index].imgUrl + "' alt='item' class='cardImg'>" +
+        "<div/>" +
         "<h4 class='cardTitulo'>" + dadosMenu[index].titulo +"</h4>" +
         "<span class='cardPreco'>" + dadosMenu[index].preco.toFixed(2).replace(".",",") + "</span>" +
         "</div>";
