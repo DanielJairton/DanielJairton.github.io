@@ -11,10 +11,17 @@ body{
     display: grid;
 }
 
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .main{
     width: 100vw;
-    height: 100vh;
+    /* height: 100vh; */
+    margin-top: 4vh;
+    margin-bottom: 4vh;
     display: flex;
     flex-direction: column;
     font-size: 20px;    
@@ -223,12 +230,8 @@ body{
     margin-top: 10px;
 }
 
-/* @media only screen and (max-device-width: 1000px) {
-    .input-grande{
-        width: 1%;
+@media screen and (max-width: 800px) {
+    .conteudo, .header, .main {
+        width: 90vh;
     }
-} */
-
-/* @media only screen and (max-device-width: 800px) {
-    .menu { width:400px;}
-} */
+}
