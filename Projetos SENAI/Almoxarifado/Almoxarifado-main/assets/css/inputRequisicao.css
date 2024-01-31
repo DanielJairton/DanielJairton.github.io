@@ -113,6 +113,10 @@ input, select{
     cursor: pointer;
 
 }
+#btnGravar {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
 #btnGravar span{
     color: #ffffff;
     font-size: 14px;
@@ -177,4 +181,10 @@ input, select{
     border: 1px solid #CDCDCD;
     border-collapse: collapse;
     padding-left: 10px;
+}
+
+@media screen and (max-width: 800px) {
+    .input-grande, #departamento, #NomeFuncionario {
+        width: 100%;
+    }
 }

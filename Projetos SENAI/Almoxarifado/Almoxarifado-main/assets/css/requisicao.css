@@ -4,11 +4,10 @@
     padding: 0;
 }
 
-/* body{
-    width: 100vw;
-} */
 body{
-    display: grid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .menu {
@@ -18,8 +17,6 @@ body{
 }
 
 .main{
-    width: 100vw;
-    /* height: 100vh; */
     margin-top: 4vh;
     margin-bottom: 4vh;
     display: flex;
@@ -30,7 +27,7 @@ body{
 
 }
 .header{
-    width: 50.4vw;
+    width: 50vw;
     height: 5vh;
     background-color: #15C7FF;   
     display: flex;
@@ -232,6 +229,10 @@ body{
 
 @media screen and (max-width: 800px) {
     .conteudo, .header, .main {
-        width: 90vh;
+        width: 95vw;
+    }
+
+    .input-grande {
+        width: 100%;
     }
 }
