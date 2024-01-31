@@ -36,11 +36,11 @@ body{
 }
 
 .label-celular{
-    margin-left: 27px;
+    margin-left: 37px;
 }
 
 .input-telefoneCelular{
-    margin-left: 10px;
+    margin-left: 20px;
 }
 
 .input-email{
@@ -52,19 +52,19 @@ body{
 }
 
 #label-genero{
-    margin-left: 55px;
+    margin-left: 40px;
 }
 
 .select-genero{
-    margin-left: 52px;
+    margin-left: 37px;
 }
 
 #label-rg{
-    margin-left: 145px;
+    margin-left: 155px;
 }
 
 #input-rg{
-    margin-left: 10px;
+    margin-left: 20px;
 }
 
 #input-orgaoEmissor{
@@ -72,13 +72,13 @@ body{
 }
 
 #label-uf{
-    margin-left: 15px;
+    margin-left: 83px;
 }
 
 #input-uf{
     width: 50px;
-    margin-left: 15px;
-}*/
+    margin-left: 83px;
+}
 
 .input-usuarioCadastro{
     width: 250px;
@@ -101,19 +101,19 @@ body{
 }
 
 #label-numero{
-    margin-left: 73px;
+    margin-left: 83px;
 }
 
 #input-numeroResidencia{
-    margin-left: 10px;
+    margin-left: 20px;
 }
 
 #label-cidade{
-    margin-left: 125px;
+    margin-left: 135px;
 }
 
 #input-cidade{
-    margin-left: 10px;
+    margin-left: 20px;
 }
 
 
