@@ -28,6 +28,7 @@ body{
     /*background: transparent;*/
     background: rgba(7, 7, 7, 0.849);
     border-radius: 5%;
+    border: 1px solid rgba(128, 128, 128, 0.76);
     /*box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;*/
     box-shadow: 5px 5px 15px rgb(0,0,0.7);
 
