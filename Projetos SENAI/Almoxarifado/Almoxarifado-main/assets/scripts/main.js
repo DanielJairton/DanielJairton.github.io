@@ -120,7 +120,14 @@ function carregarProduto() {
     validarQuantidade();
 }
 document.getElementById('CodigoProduto').addEventListener('keyup', function(){
+    //Valida a entrada de dados CodigoProduto
+    let codigoProduto = document.getElementById('CodigoProduto').value;
+    if (codigoProduto < 0) {
+        document.getElementById('CodigoProduto').value = Math.abs(document.getElementById('CodigoProduto').value);
+    }
+    
     carregarProduto();
+
     /*const codigoPesquisado = document.getElementById('CodigoProduto').value;
     let produtosFiltrados = produtos.filter((p)=>p.idProduto == codigoPesquisado);
 
@@ -310,7 +317,13 @@ function criarBtnRemover(tabela, objLinha, numeroLinha){
 
         totalRequisicao.value = parseFloat(totalRequisicao.value - parseFloat(valorLinha));
 
-
+        //Desabilita o botão gravar se total igual a zero ou menos
+        if (document.getElementById('total').value <= 0) {
+            document.getElementById('btnGravar').setAttribute("disabled", true);
+        }
+        else {
+            document.getElementById('btnGravar').removeAttribute("disabled");
+        }
 
     });
 
@@ -355,6 +368,14 @@ document.getElementById('btnInserirItens').addEventListener('click', function(){
 
     //Código Novo
     totalRequisicao.value = parseFloat(totalRequisicao.value) + parseFloat(campoQuantidade.value*produtoPesquisado[0].Preco);
+
+    //Ativa ou desativa o botão gravar dependendo da validção
+    if (totalRequisicao.value > 0) {
+        document.getElementById('btnGravar').removeAttribute("disabled");
+    }
+    else{
+        document.getElementById('btnGravar').setAttribute("disabled", true);
+    }
 
     //BtnRemover
     tdBtnRemover.appendChild(criarBtnRemover(tabelaItens, linha, qtdLinhasAtualNaTabela));
