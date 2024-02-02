@@ -1,4 +1,3 @@
-
 //Muda a cor de fundo dos input com mudarCor="true"
 function adicionarCorAoFocarInput(){
     const listInput = document.querySelectorAll("[mudarCor='true']");
@@ -43,7 +42,17 @@ function carregarMotivos(){
     selectMotivo.add(optFirst);
 
     const valorCategoria = document.getElementById('categoriaMotivo').value;
-    console.log ("Categoria Selecionada: " + valorCategoria);
+
+    if (valorCategoria == -1 || valorCategoria == "") {
+        //selectMotivo.style.backgroundColor = "gray";
+        selectMotivo.setAttribute("disabled", true);
+    }
+    else {
+        selectMotivo.removeAttribute("disabled");
+        // selectMotivo.style.backgroundColor = "white";
+    }
+
+    //console.log ("Categoria Selecionada: " + valorCategoria);
     const motivosFiltrados = motivos.filter((m)=>m.idCategoria==valorCategoria);
 
     motivosFiltrados.forEach(function(motivo){
@@ -58,41 +67,132 @@ document.getElementById('categoriaMotivo').addEventListener('change', function()
 })
 
 //Checa o id e se existir um id igual carregar os dados do produto
-document.getElementById('CodigoProduto').addEventListener('keyup', function(){
+function carregarProduto() {
     const codigoPesquisado = document.getElementById('CodigoProduto').value;
     let produtosFiltrados = produtos.filter((p)=>p.idProduto == codigoPesquisado);
 
     if (produtosFiltrados.length>0) {
         document.getElementById('DescricaoProduto').value = produtosFiltrados[0].Descricao;
         document.getElementById('Estoque').value = produtosFiltrados[0].Estoque;
+        if (document.getElementById('Estoque').value <= 0) {
+            document.getElementById('Quantidade').setAttribute("disabled", true);
+            document.getElementById('Quantidade').value = "";
+        }
+        else {
+            document.getElementById('Quantidade').removeAttribute("disabled");
+            document.getElementById('Quantidade').value = 1;
+        }
 
         //Mostra o status do estoque com cores
         if (document.getElementById('Estoque').value > produtosFiltrados[0].EstoqueMinimo*1.1) {
             document.getElementById('verde').style.display = 'inline';
             document.getElementById('amarelo').style.display = 'none';
             document.getElementById('vermelho').style.display = 'none';
-            console.log("verde");
         }
         else if(document.getElementById('Estoque').value >= produtosFiltrados[0].EstoqueMinimo*0.9){
             document.getElementById('verde').style.display = 'none';
             document.getElementById('amarelo').style.display = 'inline';
             document.getElementById('vermelho').style.display = 'none';
-            console.log("amarelo");
         }
         else{
             document.getElementById('verde').style.display = 'none';
             document.getElementById('amarelo').style.display = 'none';
             document.getElementById('vermelho').style.display = 'inline';
-            console.log("vermelho");
         }
     }
     else{
         document.getElementById('verde').style.display = 'none';
         document.getElementById('amarelo').style.display = 'none';
         document.getElementById('vermelho').style.display = 'none';
-        document.getElementById('DescricaoProduto').value = ""
-        document.getElementById('Estoque').value = ""
+        document.getElementById('DescricaoProduto').value = "";
+        document.getElementById('Estoque').value = "";
+        document.getElementById('Quantidade').setAttribute("disabled", true);
+        document.getElementById('Quantidade').value = "";
     }
+
+    // if ( document.getElementById('Quantidade').hasAttribute("disabled") == true) {
+    //     document.getElementById('btnInserirItens').setAttribute("disabled", true);
+    // }
+    // else {
+    //     document.getElementById('btnInserirItens').removeAttribute("disabled");
+    // }
+
+    validarQuantidade();
+}
+document.getElementById('CodigoProduto').addEventListener('keyup', function(){
+    carregarProduto();
+    /*const codigoPesquisado = document.getElementById('CodigoProduto').value;
+    let produtosFiltrados = produtos.filter((p)=>p.idProduto == codigoPesquisado);
+
+    if (produtosFiltrados.length>0) {
+        document.getElementById('DescricaoProduto').value = produtosFiltrados[0].Descricao;
+        document.getElementById('Estoque').value = produtosFiltrados[0].Estoque;
+        document.getElementById('Quantidade').removeAttribute("disabled");
+        document.getElementById('Quantidade').style.backgroundColor = "white";
+
+        //Mostra o status do estoque com cores
+        if (document.getElementById('Estoque').value > produtosFiltrados[0].EstoqueMinimo*1.1) {
+            document.getElementById('verde').style.display = 'inline';
+            document.getElementById('amarelo').style.display = 'none';
+            document.getElementById('vermelho').style.display = 'none';
+            //console.log("verde");
+        }
+        else if(document.getElementById('Estoque').value >= produtosFiltrados[0].EstoqueMinimo*0.9){
+            document.getElementById('verde').style.display = 'none';
+            document.getElementById('amarelo').style.display = 'inline';
+            document.getElementById('vermelho').style.display = 'none';
+            //console.log("amarelo");
+        }
+        else{
+            document.getElementById('verde').style.display = 'none';
+            document.getElementById('amarelo').style.display = 'none';
+            document.getElementById('vermelho').style.display = 'inline';
+            //console.log("vermelho");
+        }
+    }
+    else{
+        document.getElementById('verde').style.display = 'none';
+        document.getElementById('amarelo').style.display = 'none';
+        document.getElementById('vermelho').style.display = 'none';
+        document.getElementById('DescricaoProduto').value = "";
+        document.getElementById('Estoque').value = "";
+        document.getElementById('Quantidade').setAttribute("disabled", true);
+        document.getElementById('Quantidade').style.backgroundColor = "grey";
+        document.getElementById('Quantidade').value = "";
+    }*/
+})
+
+//Válida a entrada no input quantidade
+function validarQuantidade() {
+    const campoQuantidade = document.getElementById('Quantidade');
+    const campoEstoque = document.getElementById('Estoque');
+    
+
+    if (campoQuantidade.value < 0) {
+        campoQuantidade.value = Math.abs(campoQuantidade.value);
+        //console.log("Quantidade negativa mudada para positiva");
+    }
+    if (campoQuantidade.value == 0) {
+        campoQuantidade.value = 1;
+    }
+
+    let quantidade = parseInt(campoQuantidade.value);
+    let estoque = parseInt(campoEstoque.value);
+    //if (campoQuantidade.value < campoEstoque.value) {
+    if (quantidade < estoque && quantidade > 0 && Number.isInteger(quantidade)) {
+        document.getElementById('btnInserirItens').removeAttribute("disabled");
+        //console.log("Quantidade válida");
+    }
+    else {
+        document.getElementById('btnInserirItens').setAttribute("disabled", true);
+        //console.log("Quantidade inválida");
+    }
+}
+document.getElementById('Quantidade').addEventListener("keyup", function(){
+    validarQuantidade();
+})
+document.getElementById('Quantidade').addEventListener("change", function(){
+    validarQuantidade();
 })
 
 //Checa o id e se existir um id igual carregar os dados
@@ -126,11 +226,28 @@ document.getElementById('idFuncionario').addEventListener('keyup', function(){
 //Checa se os campos estão preenchidos de forma válida
 document.getElementById('btnGravar').addEventListener('click', function(){
     const elementosObrigatorios = document.querySelectorAll('[data-obrigatorio="true"]');
-    console.log(elementosObrigatorios);
+    // console.log(elementosObrigatorios);
 
     elementosObrigatorios.forEach(function(item){
         if(item.value=="" || item.value==-1){
             item.style.backgroundColor='red';
+        }
+        else
+        {
+            item.style.backgroundColor='white';
+        }
+    })
+
+    const elementosInt = document.querySelectorAll('[data-id="true"]')
+    //console.log(elementosInt);
+
+    elementosInt.forEach(function(item){
+        if (item.value=="" || item.value < 0 || Number.isInteger(parseFloat(item.value)) == false) {
+            item.style.backgroundColor='red';
+        }
+        else
+        {
+            item.style.backgroundColor='white';
         }
     })
 
@@ -265,5 +382,29 @@ function eventoClickPrioridadeHabilitarCor(){
     });
 }
 
+document.getElementById('total').addEventListener("change", function () {
+    const campoPrecoTotal = document.getElementById('total');
+    let total = parseFloat(campoPrecoTotal.value);
+
+    console.log("Mudança total");
+
+    if (total > 0) {
+        document.getElementById('btnGravar').removeAttribute("disabled");
+    }
+    else {
+        document.getElementById('btnGravar').setAttribute("disabled", true);
+    }
+})
+
 adicionarCorAoFocarInput();
 carregarCategorias();
+carregarMotivos();
+carregarProduto();
+
+//-----------------------------------------------------------------------------------------
+
+function validarCampoInteiros(campo){
+    if (campo.value < 1) {
+        document.querySelectorAll("")
+    }
+}

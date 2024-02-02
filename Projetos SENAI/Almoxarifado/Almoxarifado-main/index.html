@@ -15,6 +15,7 @@
 </head>
 <body>
     <!-- <div class="menu"></div> -->
+    <form></form>
 <div class="container-fluid menu">
     <div class="main container-fluid">
         <div class="header">
@@ -24,13 +25,13 @@
             <div id="dadosPrincipais">
                 <div class="titulo">
                     <span>Dados Principais | Requisição Nº </span>
-                    <input type="number" id="inpNumero" mudarCor="true">
+                    <input type="number" id="inpNumero" min="0" step="1" data-obrigatorio="true" mudarCor="true">
                 </div>
                 <div id="camposPrincipais">
                     <div class="camposPrincipaisLinha1 linhasCampos">
                         <div class="grupo1 grupoInput">
                             <span>ID.</span>
-                            <input type="number" class="input-pequeno" id="idDepartamento" data-obrigatorio="true" mudarCor="true">
+                            <input type="number" class="input-pequeno" id="idDepartamento" min="0" step="1" data-id="true" data-obrigatorio="true" mudarCor="true">
                         </div>
                         <div class="grupo2 grupoInput">
                             <span>Departamento</span>
@@ -44,11 +45,11 @@
                     <div class="camposPrincipaisLinha2 linhasCampos" data-obrigatorio="true">
                         <div class="grupo4 grupoInput">
                             <span>ID Func.</span>
-                            <input type="number" class="input-pequeno" id="idFuncionario" data-obrigatorio="true" mudarCor="true">
+                            <input type="number" class="input-pequeno" id="idFuncionario" min="0" step="1" data-id="true" data-obrigatorio="true" mudarCor="true">
                         </div>
                         <div class="grupo5 grupoInput">
                             <span>Nome Funcionário</span>
-                            <input type="text" class="input-grande" id="NomeFuncionario" data-obrigatorio="true"mudarCor="true">
+                            <input type="text" class="input-grande" id="NomeFuncionario" mudarCor="true">
                         </div>
                         <div class="grupo6 grupoInput">
                             <span>Cargo</span>
@@ -107,15 +108,16 @@
                         
                             <div class="grupoProduto">
                                 <span>ID. Produto</span>
-                                <input type="text" id="CodigoProduto">
+                                <input type="text" id="CodigoProduto" mudarCor="true">
                             </div>
                             <div class="grupoProdutoDescricao">
                                 <span>Descrição</span>
-                                <input type="text" id="DescricaoProduto">
+                                <input type="text" id="DescricaoProduto" disabled mudarCor="true">
                             </div>
                             <div class="grupoEstoque">
                                 <span>Estoque</span>
-                                <input type="text" id="Estoque">
+                                <!-- <input type="text" id="Estoque" disabled mudarCor="true"> -->
+                                <input type="number" id="Estoque" disabled mudarCor="true">
                             </div>
                         
                             <div class="grupoStatusEstoque"> 
@@ -145,15 +147,22 @@
 
                             <div class="grupoQuantidade">
                                 <span>Quantidade</span>
-                                <input type="number" id="Quantidade">
+                                <input type="number" id="Quantidade" min="1" step="1" mudarCor="true">
                             </div>
                             
-                            <div class="grupoBtnInserirItens">
+                            <!-- <div class="grupoBtnInserirItens">
                                 <div class="BtnInserirItens" id="btnInserirItens">  
                                     <span>Adicionar</span>
                                 </div>
+                            </div> -->
+
+                            <div class="grupoBtnInserirItens">
+                                <button class="BtnInserirItens" id="btnInserirItens">
+                                    <span>Adicionar</span>
+                                </button>
                             </div>
                     </div>
+                    
                     <div class="tabela">
                         <table class="tabelaItens" id="tabelaItens">
                             <tr>
@@ -166,16 +175,21 @@
                             </tr>
                         </table>
                     </div>
+
                     <div class="linhaTotal">
                         <span>Preço Total</span>
-                        <input type="text" readonly id="total">
+                        <input type="text" readonly id="total" mudarCor="true">
                     </div>
                 </div>
-                <div class="grupoBtnGravar">
+
+                <!-- <div class="grupoBtnGravar">
                     <div class="btnGravar" id="btnGravar">
                         <span>Gravar</span>
                     </div>
-                </div>
+                </div> -->
+
+                <!-- <button class="btnGravar" id="btnGravar" disabled >Gravar</button> -->
+                <button class="btnGravar" id="btnGravar" >Gravar</button>
             </div>
     
         </div>

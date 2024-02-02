@@ -1,0 +1,18 @@
+Teste feito por Mario (Análise do código)
+
+    -CT1
+        - 1 Completo 
+        - 2 Completo
+        - 3 Completo
+    
+    -CT2
+        - 1 Completo
+        - 2 Completo
+
+    -CT3, CT4, CT5 - Completo
+
+    -CT6
+        - 1 Completo
+        - 2 Completo
+
+    CT7 - Incompleto

@@ -56,6 +56,14 @@ const produtos=[
         "Unidade": "Un",
         "Preco": 40.00
     },
+    {
+        "idProduto": 4,
+        "Descricao": "Mesa",
+        "Estoque": 0,
+        "EstoqueMinimo": 2,
+        "Unidade": "Un",
+        "Preco": 60.00
+    }
 ]
 
 const departamentos = [
