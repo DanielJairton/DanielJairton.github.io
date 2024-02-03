@@ -11,6 +11,69 @@ function adicionarCorAoFocarInput(){
     })
 }
 
+//Checa o id e se existir um id igual carregar os dados
+document.getElementById('idDepartamento').addEventListener('keyup', function(){
+    const codigoPesquisado = document.getElementById('idDepartamento').value;
+    let departamentosFiltrados = departamentos.filter((p)=>p.idDep == codigoPesquisado);
+
+    if (departamentosFiltrados.length>0) {
+        document.getElementById('departamento').value = departamentosFiltrados[0].descricao;
+    }
+    else{
+        document.getElementById('departamento').value = "";
+    }
+})
+
+//Checa o id e se existir um id igual carregar os dados
+document.getElementById('idFuncionario').addEventListener('keyup', function(){
+    const codigoPesquisado = document.getElementById('idFuncionario').value;
+    let funcionariosFiltrados = funcionarios.filter((p)=>p.idFuncionario == codigoPesquisado);
+
+    if (funcionariosFiltrados.length>0) {
+        document.getElementById('NomeFuncionario').value = funcionariosFiltrados[0].nome;
+        document.getElementById('cargo').value = funcionariosFiltrados[0].cargo;
+    }
+    else{
+        document.getElementById('NomeFuncionario').value = "";
+        document.getElementById('cargo').value = "";
+    }
+})
+
+//Mudar a cor de volta para o normal quando preenchido
+document.getElementById('urgente').addEventListener('click', function(){
+    const divPrioridade2 = document.getElementById("radioPrioridade");
+    divPrioridade2.classList.remove('radioPrioridadeDesabilitado');
+    divPrioridade2.classList.add('radioPrioridade');
+})
+document.getElementById('medio').addEventListener('click', function(){
+    const divPrioridade2 = document.getElementById("radioPrioridade");
+    divPrioridade2.classList.remove('radioPrioridadeDesabilitado');
+    divPrioridade2.classList.add('radioPrioridade');
+})
+document.getElementById('baixo').addEventListener('click', function(){
+    const divPrioridade2 = document.getElementById("radioPrioridade");
+    divPrioridade2.classList.remove('radioPrioridadeDesabilitado');
+    divPrioridade2.classList.add('radioPrioridade');
+})
+
+//Função Obsoleta
+/*function eventoClickPrioridadeHabilitarCor(){
+    const checkboxesPrioridade = document.querySelectorAll('.chkPrioridade');    
+    console.log(checkboxesPrioridade);
+    checkboxesPrioridade.forEach(function(checkbox) {
+        checkbox.addEventListener('click', function() {    
+            const divPrioridade = document.getElementById("radioPrioridade");
+            divPrioridade.classList.add('radioPrioridade');
+            divPrioridade.classList.remove('radioPrioridadeDesabilitado');
+            document.getElementById('urgente').classList.add('chkPrioridade');
+            document.getElementById('urgente').classList.remove('chkPrioridadeDesabilitado');
+            document.getElementById('medio').classList.add('chkPrioridade');
+            document.getElementById('medio').classList.remove('chkPrioridadeDesabilitado');
+            document.getElementById('baixo').classList.add('chkPrioridade');
+            document.getElementById('baixo').classList.remove('chkPrioridadeDesabilitado');
+        });
+    });
+}*/
 
 //Carrega as categorias
 function carregarCategorias(){
@@ -42,16 +105,7 @@ function carregarMotivos(){
     selectMotivo.add(optFirst);
 
     const valorCategoria = document.getElementById('categoriaMotivo').value;
-
-    if (valorCategoria == -1 || valorCategoria == "") {
-        //selectMotivo.style.backgroundColor = "gray";
-        selectMotivo.setAttribute("disabled", true);
-    }
-    else {
-        selectMotivo.removeAttribute("disabled");
-        // selectMotivo.style.backgroundColor = "white";
-    }
-
+    
     //console.log ("Categoria Selecionada: " + valorCategoria);
     const motivosFiltrados = motivos.filter((m)=>m.idCategoria==valorCategoria);
 
@@ -61,6 +115,22 @@ function carregarMotivos(){
         opt.text = motivo.descricao;
         selectMotivo.add(opt);
     })
+
+    var listaOpcoesMotivo = document.getElementById('Motivo').options;
+    //console.log(listaOpcoesMotivo.length);
+
+    //console.log("Valor opção " + valorCategoria);
+
+    //Caso o select motivo não tenha uma opção válida o desabilita
+    if (valorCategoria == -1 || valorCategoria == "" || listaOpcoesMotivo.length == 1) {
+        selectMotivo.style.backgroundColor = "gray";
+        selectMotivo.setAttribute("disabled", true);
+    }
+    else {
+        selectMotivo.removeAttribute("disabled");
+        selectMotivo.style.backgroundColor = "white";
+    }
+
 }
 document.getElementById('categoriaMotivo').addEventListener('change', function(){
     carregarMotivos();
@@ -186,7 +256,7 @@ function validarQuantidade() {
     let quantidade = parseInt(campoQuantidade.value);
     let estoque = parseInt(campoEstoque.value);
     //if (campoQuantidade.value < campoEstoque.value) {
-    if (quantidade < estoque && quantidade > 0 && Number.isInteger(quantidade)) {
+    if (quantidade <= estoque && quantidade > 0 && Number.isInteger(quantidade)) {
         document.getElementById('btnInserirItens').removeAttribute("disabled");
         //console.log("Quantidade válida");
     }
@@ -202,34 +272,6 @@ document.getElementById('Quantidade').addEventListener("change", function(){
     validarQuantidade();
 })
 
-//Checa o id e se existir um id igual carregar os dados
-document.getElementById('idDepartamento').addEventListener('keyup', function(){
-    const codigoPesquisado = document.getElementById('idDepartamento').value;
-    let departamentosFiltrados = departamentos.filter((p)=>p.idDep == codigoPesquisado);
-
-    if (departamentosFiltrados.length>0) {
-        document.getElementById('departamento').value = departamentosFiltrados[0].descricao;
-    }
-    else{
-        document.getElementById('departamento').value = ""
-    }
-})
-
-//Checa o id e se existir um id igual carregar os dados
-document.getElementById('idFuncionario').addEventListener('keyup', function(){
-    const codigoPesquisado = document.getElementById('idFuncionario').value;
-    let funcionariosFiltrados = funcionarios.filter((p)=>p.idFuncionario == codigoPesquisado);
-
-    if (funcionariosFiltrados.length>0) {
-        document.getElementById('NomeFuncionario').value = funcionariosFiltrados[0].nome;
-        document.getElementById('cargo').value = funcionariosFiltrados[0].cargo;
-    }
-    else{
-        document.getElementById('NomeFuncionario').value = ""
-        document.getElementById('cargo').value = ""
-    }
-})
-
 //Checa se os campos estão preenchidos de forma válida
 document.getElementById('btnGravar').addEventListener('click', function(){
     const elementosObrigatorios = document.querySelectorAll('[data-obrigatorio="true"]');
@@ -239,7 +281,7 @@ document.getElementById('btnGravar').addEventListener('click', function(){
         if(item.value=="" || item.value==-1){
             item.style.backgroundColor='red';
         }
-        else
+        else if(item.type !== document.getElementById("urgente").type )
         {
             item.style.backgroundColor='white';
         }
@@ -252,7 +294,7 @@ document.getElementById('btnGravar').addEventListener('click', function(){
         if (item.value=="" || item.value < 0 || Number.isInteger(parseFloat(item.value)) == false) {
             item.style.backgroundColor='red';
         }
-        else
+        else if(item.type !== document.getElementById("urgente").type )
         {
             item.style.backgroundColor='white';
         }
@@ -279,28 +321,11 @@ document.getElementById('btnGravar').addEventListener('click', function(){
     }
 });
 
-//Mudar a cor de volta para o normal quando preenchido
-document.getElementById('urgente').addEventListener('click', function(){
-    const divPrioridade2 = document.getElementById("radioPrioridade");
-    divPrioridade2.classList.remove('radioPrioridadeDesabilitado');
-    divPrioridade2.classList.add('radioPrioridade');
-})
-document.getElementById('medio').addEventListener('click', function(){
-    const divPrioridade2 = document.getElementById("radioPrioridade");
-    divPrioridade2.classList.remove('radioPrioridadeDesabilitado');
-    divPrioridade2.classList.add('radioPrioridade');
-})
-document.getElementById('baixo').addEventListener('click', function(){
-    const divPrioridade2 = document.getElementById("radioPrioridade");
-    divPrioridade2.classList.remove('radioPrioridadeDesabilitado');
-    divPrioridade2.classList.add('radioPrioridade');
-})
-
 //Constante do valor total de requisição, zerado para evitar erro
 const totalRequisicao = document.getElementById('total')
 totalRequisicao.value = 0
 
-
+//Retonar o elemento btnRemover
 function criarBtnRemover(tabela, objLinha, numeroLinha){
     const btnRemoverItem = document.createElement('div');
         btnRemoverItem.className = "BtnRemover";
@@ -330,7 +355,7 @@ function criarBtnRemover(tabela, objLinha, numeroLinha){
     return btnRemoverItem;
 }
 
-
+//Insere os itens na tabela
 var qtdLinhasAtualNaTabela = 0;
 document.getElementById('btnInserirItens').addEventListener('click', function(){
     const tabelaItens = document.getElementById('tabelaItens')
@@ -384,25 +409,6 @@ document.getElementById('btnInserirItens').addEventListener('click', function(){
         qtdLinhasAtualNaTabela = qtdLinhasAtualNaTabela + 1;
 })
 
-
-function eventoClickPrioridadeHabilitarCor(){
-    const checkboxesPrioridade = document.querySelectorAll('.chkPrioridade');    
-    console.log(checkboxesPrioridade);
-    checkboxesPrioridade.forEach(function(checkbox) {
-        checkbox.addEventListener('click', function() {    
-            const divPrioridade = document.getElementById("radioPrioridade");
-            divPrioridade.classList.add('radioPrioridade');
-            divPrioridade.classList.remove('radioPrioridadeDesabilitado');
-            document.getElementById('urgente').classList.add('chkPrioridade');
-            document.getElementById('urgente').classList.remove('chkPrioridadeDesabilitado');
-            document.getElementById('medio').classList.add('chkPrioridade');
-            document.getElementById('medio').classList.remove('chkPrioridadeDesabilitado');
-            document.getElementById('baixo').classList.add('chkPrioridade');
-            document.getElementById('baixo').classList.remove('chkPrioridadeDesabilitado');
-        });
-    });
-}
-
 document.getElementById('total').addEventListener("change", function () {
     const campoPrecoTotal = document.getElementById('total');
     let total = parseFloat(campoPrecoTotal.value);
@@ -417,15 +423,8 @@ document.getElementById('total').addEventListener("change", function () {
     }
 })
 
+//Funções chamadas para inicialização
 adicionarCorAoFocarInput();
 carregarCategorias();
 carregarMotivos();
 carregarProduto();
-
-//-----------------------------------------------------------------------------------------
-
-function validarCampoInteiros(campo){
-    if (campo.value < 1) {
-        document.querySelectorAll("")
-    }
-}

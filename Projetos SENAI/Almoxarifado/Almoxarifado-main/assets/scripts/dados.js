@@ -1,3 +1,39 @@
+const departamentos = [
+    {
+        "idDep": 1,
+        "descricao": "Sec. do Trabalho",
+        "responsavel": "João"
+    },
+    {
+        "idDep": 2,
+        "descricao": "Sec. da Educação",
+        "responsavel": "Maria"
+    },
+    {
+        "idDep": 3,
+        "descricao": "Nat",
+        "responsavel": "José"
+    },
+]
+
+const funcionarios = [
+    {
+        "idFuncionario": 1,
+        "nome": "João Vargas",
+        "cargo": "diretor"
+    },
+    {
+        "idFuncionario": 2,
+        "nome": "Maria Souza",
+        "cargo": "gerente"
+    },
+    {
+        "idFuncionario": 3,
+        "nome": "André Santos",
+        "cargo": "zelador"
+    }
+]
+
 const categorias = [
     {
         "idCategoria" : 1,
@@ -63,41 +99,5 @@ const produtos=[
         "EstoqueMinimo": 2,
         "Unidade": "Un",
         "Preco": 60.00
-    }
-]
-
-const departamentos = [
-    {
-        "idDep": 1,
-        "descricao": "Sec. do Trabalho",
-        "responsavel": "João"
-    },
-    {
-        "idDep": 2,
-        "descricao": "Sec. da Educação",
-        "responsavel": "Maria"
-    },
-    {
-        "idDep": 3,
-        "descricao": "Nat",
-        "responsavel": "José"
-    },
-]
-
-const funcionarios = [
-    {
-        "idFuncionario": 1,
-        "nome": "João Vargas",
-        "cargo": "diretor"
-    },
-    {
-        "idFuncionario": 2,
-        "nome": "Maria Souza",
-        "cargo": "gerente"
-    },
-    {
-        "idFuncionario": 3,
-        "nome": "André Santos",
-        "cargo": "zelador"
     }
 ]

@@ -23,12 +23,19 @@ body{
     color: azure;
     padding: 30px;
     border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 15px;
 
 }
 
 .box-menor{
     display: flex;
-    align-items: center;
+    flex-direction: row;
+    align-items: start;
+    justify-content: start;
 }
 
 input{
@@ -43,16 +50,17 @@ button{
 
 .umidade{
     font-weight: 350;
-    font-size: large;
+    font-size: larger;
 }
 
 .nuvens{
     text-transform: capitalize;
+    vertical-align: top;
     margin-top: auto;
-    font-size: large;
+    font-size: larger;
 }
 
 .graus{
     margin-bottom: auto;
-    font-size: large;
+    font-size: larger;
 }

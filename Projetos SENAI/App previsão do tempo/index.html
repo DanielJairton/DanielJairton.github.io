@@ -12,23 +12,34 @@
     <title>Previsão Do Tempo </title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <main>
+
         <div class="box-maior">
             <h1>Previsão Do Tempo</h1>
-            <input type="text" class="input-cidade" placeholder="Insira a cidade">
-            <button type="button" class="btn btn-primary" onclick="pesquisar()">Buscar</button>
+
+            <div>
+                <input type="text" class="input-cidade" placeholder="Insira a cidade">
+                <button type="button" class="btn btn-primary" onclick="pesquisar()">Buscar</button>
+            </div>
+
             <div class="box-medio"> 
                 <h2 class="titulo-previsao"> </h2>
                 <p class="graus"></p>  
+
                 <div class="box-menor">
                     <p class="nuvens"></p>
                     <img src="" class="img-previsao" >
                 </div>
             </div>
+            
             <p class="umidade"> </p>
+
         </div>
+
     </main>
+
    <script src="script.js"></script>
 </body>
 </html>

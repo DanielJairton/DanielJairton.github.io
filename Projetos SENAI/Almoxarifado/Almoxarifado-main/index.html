@@ -13,49 +13,60 @@
     <link rel="stylesheet" href="assets/css/inputRequisicao.css">
     <link rel="stylesheet" href="assets/css/tabelas.css">
 </head>
+
 <body>
     <!-- <div class="menu"></div> -->
-    <form></form>
 <div class="container-fluid menu">
     <div class="main container-fluid">
         <div class="header">
             <span>Novo Pedido de Requisição</span>
         </div>
+
         <div class="conteudo">
             <div id="dadosPrincipais">
                 <div class="titulo">
                     <span>Dados Principais | Requisição Nº </span>
                     <input type="number" id="inpNumero" min="0" step="1" data-obrigatorio="true" mudarCor="true">
                 </div>
+
                 <div id="camposPrincipais">
+
                     <div class="camposPrincipaisLinha1 linhasCampos">
                         <div class="grupo1 grupoInput">
                             <span>ID.</span>
                             <input type="number" class="input-pequeno" id="idDepartamento" min="0" step="1" data-id="true" data-obrigatorio="true" mudarCor="true">
                         </div>
+
                         <div class="grupo2 grupoInput">
                             <span>Departamento</span>
                             <input type="text" class="input-grande" id="departamento" data-obrigatorio="true" mudarCor="true">
                         </div>
+
                         <div class="grupo3 grupoInput">
                             <span>Data</span>
                             <input type="date" id="dataRequisicao" data-obrigatorio="true" mudarCor="true">
                         </div>
+
                     </div>
+
                     <div class="camposPrincipaisLinha2 linhasCampos" data-obrigatorio="true">
                         <div class="grupo4 grupoInput">
                             <span>ID Func.</span>
                             <input type="number" class="input-pequeno" id="idFuncionario" min="0" step="1" data-id="true" data-obrigatorio="true" mudarCor="true">
                         </div>
+
                         <div class="grupo5 grupoInput">
                             <span>Nome Funcionário</span>
                             <input type="text" class="input-grande" id="NomeFuncionario" mudarCor="true">
                         </div>
+
                         <div class="grupo6 grupoInput">
                             <span>Cargo</span>
                             <input type="text" id="cargo" data-obrigatorio="true" mudarCor="true">
                         </div>
+
                     </div>
+
                     <div class="camposPrincipaisLinha3 linhasCampos">
                         <div class="grupo7 grupoInput">
                             <span>Categoria Motivo</span>  
@@ -63,7 +74,9 @@
                                 <select id="categoriaMotivo" data-obrigatorio="true" mudarCor="true"></select>
                                 <img class="btnAdd" src="assets/img/add.svg" alt="">
                             </div>
+
                         </div>
+
                         <div class="grupo8 grupoInput">
                             <span>Motivo</span> 
                             <div class="grupoMotivo"> 
@@ -72,6 +85,7 @@
                             </div>                            
                    
                         </div>
+
                         <div class="grupo9 grupoInput">
                             <span>Nível de Prioridade</span>
                             <div class="radioPrioridade" id="radioPrioridade" >
@@ -80,29 +94,34 @@
                                     <span>Urgente</span>
                                     
                                 </div>
+
                                 <div class="grupoPrioridade">
                                     <input class="chkPrioridade" type="radio" name="prioridade" id="medio" data-obrigatorio="true" >
                                     <span>Médio</span>
                                    
                                 </div>
+
                                 <div class="grupoPrioridade">
                                     <input class="chkPrioridade" type="radio" name="prioridade" id="baixo" data-obrigatorio="true" >
                                     <span>Baixo</span>
                                     
                                 </div>
-                                
-                                
-                             
+
                             </div>
+
                         </div>
+
                     </div>
                     
                 </div>
+
             </div>
+
             <div class="itensRequisicao">
                 <div class="titulo">
                     <span>Itens da Requisição </span>                
                 </div>
+
                 <div class="camposItens">
                     <div class="linhaAdicionarItens">
                         
@@ -111,10 +130,12 @@
                                 <!-- <input type="text" id="CodigoProduto" mudarCor="true"> -->
                                 <input type="number" min="0" step="1" id="CodigoProduto" mudarCor="true">
                             </div>
+
                             <div class="grupoProdutoDescricao">
                                 <span>Descrição</span>
                                 <input type="text" id="DescricaoProduto" disabled mudarCor="true">
                             </div>
+
                             <div class="grupoEstoque">
                                 <span>Estoque</span>
                                 <!-- <input type="text" id="Estoque" disabled mudarCor="true"> -->
@@ -142,6 +163,7 @@
                                         </div>
                                         
                                     </div>
+
                                 </div>                           
                           
                             </div>
@@ -161,6 +183,7 @@
                                 <button class="BtnInserirItens" id="btnInserirItens">
                                     <span>Adicionar</span>
                                 </button>
+
                             </div>
                     </div>
                     
@@ -181,6 +204,7 @@
                         <span>Preço Total</span>
                         <input type="text" readonly id="total" mudarCor="true">
                     </div>
+
                 </div>
 
                 <!-- <div class="grupoBtnGravar">
@@ -190,13 +214,16 @@
                 </div> -->
 
                 <!-- <button class="btnGravar" id="btnGravar" disabled >Gravar</button> -->
+
                 <button class="btnGravar" id="btnGravar" disabled >Gravar</button>
+
             </div>
     
         </div>
     </div>
 
 </div>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <script src="assets/scripts/dados.js"></script>
 <script src="assets/scripts/main.js"></script>

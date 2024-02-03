@@ -1,6 +1,6 @@
 function tornarVisivel(){
     const soLeitura = document.querySelectorAll('.soLeitura');
-    console.log(soLeitura);
+    //console.log(soLeitura);
     for (let index = 0; index < soLeitura.length; index++) {
         soLeitura[index].style.visibility = 'visible';
     }

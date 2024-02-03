@@ -14,7 +14,6 @@ body{
     justify-content: center;
     padding: 5px;
     margin: 5px;
-
 }
 
 .box-medio{
@@ -40,4 +39,10 @@ summary {
     list-style-position: inside;
     text-align: left;
     text-indent: 20px;
+}
+
+@media screen and (max-width: 350px) {
+    .box-medio {
+        min-width: 92.5vw;
+    }
 }
