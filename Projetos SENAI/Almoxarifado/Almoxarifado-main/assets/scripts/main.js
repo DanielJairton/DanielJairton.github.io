@@ -11,6 +11,21 @@ function adicionarCorAoFocarInput(){
     })
 }
 
+//Converte o valor do campo total de texto para número
+function totalTextoParaNumero(){
+    let campoTotal = document.getElementById('total');
+    campoTotal.value = campoTotal.value.replace("R$ ", "");
+    campoTotal.value = campoTotal.value.replace(",", ".");
+    campoTotal.value = parseFloat(campoTotal.value);
+}
+//Converte o valor do campo total de número para texto
+function totalNumeroParaTexto(){
+    let campoTotal = document.getElementById('total');
+    campoTotal.value = parseFloat(campoTotal.value).toFixed(2);
+    campoTotal.value = "R$ " + campoTotal.value;
+    campoTotal.value = campoTotal.value.replace(".",",");
+}
+
 //Checa o id e se existir um id igual carregar os dados
 document.getElementById('idDepartamento').addEventListener('keyup', function(){
     const codigoPesquisado = document.getElementById('idDepartamento').value;
@@ -242,8 +257,7 @@ document.getElementById('CodigoProduto').addEventListener('keyup', function(){
 //Válida a entrada no input quantidade
 function validarQuantidade() {
     const campoQuantidade = document.getElementById('Quantidade');
-    const campoEstoque = document.getElementById('Estoque');
-    
+    const campoEstoque = document.getElementById('Estoque');   
 
     if (campoQuantidade.value < 0) {
         campoQuantidade.value = Math.abs(campoQuantidade.value);
@@ -322,8 +336,9 @@ document.getElementById('btnGravar').addEventListener('click', function(){
 });
 
 //Constante do valor total de requisição, zerado para evitar erro
-const totalRequisicao = document.getElementById('total')
-totalRequisicao.value = 0
+const totalRequisicao = document.getElementById('total');
+totalRequisicao.value = "R$ " + (0).toFixed(2);
+totalRequisicao.value = totalRequisicao.value.replace(".",",");
 
 //Retonar o elemento btnRemover
 function criarBtnRemover(tabela, objLinha, numeroLinha){
@@ -338,17 +353,26 @@ function criarBtnRemover(tabela, objLinha, numeroLinha){
         }
 
         const colunas = objLinha.getElementsByTagName('td');
-        let valorLinha = colunas[5].innerText;
+        //let valorLinha = colunas[5].innerText;
+        let valorLinha = colunas[5].innerText.replace("R$ ", "");
+        valorLinha = parseFloat(valorLinha.replace(",","."));
 
+        //Subtraindo valor da linha do total
+        totalTextoParaNumero();
+
+        //Versão antiga funcional
         totalRequisicao.value = parseFloat(totalRequisicao.value - parseFloat(valorLinha));
 
         //Desabilita o botão gravar se total igual a zero ou menos
+        //Versão antiga funcional
         if (document.getElementById('total').value <= 0) {
             document.getElementById('btnGravar').setAttribute("disabled", true);
         }
         else {
             document.getElementById('btnGravar').removeAttribute("disabled");
         }
+
+        totalNumeroParaTexto();
 
     });
 
@@ -380,8 +404,10 @@ document.getElementById('btnInserirItens').addEventListener('click', function(){
     tdDescricao.innerHTML = campoDescricaoProduto.value
     tdQuantidade.innerHTML = campoQuantidade.value
     tdUnidade.innerHTML = produtoPesquisado[0].Unidade
-    tdPreco.innerHTML = produtoPesquisado[0].Preco
-    tdTotalLinha.innerHTML = campoQuantidade.value*produtoPesquisado[0].Preco;
+    //tdPreco.innerHTML = produtoPesquisado[0].Preco
+    tdPreco.innerHTML = "R$ " + produtoPesquisado[0].Preco.toFixed(2).replace(".", ",")
+    //tdTotalLinha.innerHTML = campoQuantidade.value*produtoPesquisado[0].Preco;
+    tdTotalLinha.innerHTML = "R$ " + (campoQuantidade.value*produtoPesquisado[0].Preco).toFixed(2).replace(".", ",");
 
     linha.appendChild(tdCodigo)
     linha.appendChild(tdDescricao)
@@ -391,10 +417,12 @@ document.getElementById('btnInserirItens').addEventListener('click', function(){
     linha.appendChild(tdTotalLinha)
     tabelaItens.appendChild(linha)
 
-    //Código Novo
+    totalTextoParaNumero();
+
+    //Código Antigo Funcional
     totalRequisicao.value = parseFloat(totalRequisicao.value) + parseFloat(campoQuantidade.value*produtoPesquisado[0].Preco);
 
-    //Ativa ou desativa o botão gravar dependendo da validção
+    //Ativa ou desativa o botão gravar dependendo da validação
     if (totalRequisicao.value > 0) {
         document.getElementById('btnGravar').removeAttribute("disabled");
     }
@@ -404,13 +432,22 @@ document.getElementById('btnInserirItens').addEventListener('click', function(){
 
     //BtnRemover
     tdBtnRemover.appendChild(criarBtnRemover(tabelaItens, linha, qtdLinhasAtualNaTabela));
-        linha.appendChild(tdBtnRemover);
-        tabelaItens.appendChild(linha);
-        qtdLinhasAtualNaTabela = qtdLinhasAtualNaTabela + 1;
+    linha.appendChild(tdBtnRemover);
+    tabelaItens.appendChild(linha);
+    qtdLinhasAtualNaTabela = qtdLinhasAtualNaTabela + 1;
+    
+    //Resetar campos
+    document.getElementById('CodigoProduto').value = "";
+    carregarProduto();
+    totalNumeroParaTexto();
 })
 
 document.getElementById('total').addEventListener("change", function () {
     const campoPrecoTotal = document.getElementById('total');
+
+    totalTextoParaNumero();
+
+    //Versão antiga funcional
     let total = parseFloat(campoPrecoTotal.value);
 
     console.log("Mudança total");
@@ -421,6 +458,8 @@ document.getElementById('total').addEventListener("change", function () {
     else {
         document.getElementById('btnGravar').setAttribute("disabled", true);
     }
+
+    totalNumeroParaTexto();
 })
 
 //Funções chamadas para inicialização
